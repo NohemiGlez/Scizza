@@ -8,9 +8,18 @@ html
     link(href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet')
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU' crossorigin='anonymous')
   body
-    block content
-    div(class='sticky-bottom footer')
-      p(class='presentation-text text-center') ® #{title} Todos los derechos reservados, 2018
+    header
+      nav(class='navbar navbar-light bg-trans fixed-top p-5')
+        a(class='navbar-brand' href='#')
+          img(src='/images/pizza_icon.png' width='30' height='30' class='d-inline-block align-top' alt='Pizza icon')
+          span(class='lobster') #{title}
+        ul(class='navbar-nav')
+          li(class='nav-item')
+    main
+      block content
+    footer(class='p-2')
+      div(class='sticky-bottom footer')
+        p(class='presentation-text text-center') ® #{title} Todos los derechos reservados, 2018
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous')
