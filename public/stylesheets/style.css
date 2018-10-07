@@ -1,0 +1,49 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.link {
+  color: #CA2521 !important;
+}
+.peperoni-color {
+  color: #61120E;
+}
+.arrow-down {
+  color: #f2f2f2 !important;
+}
+.background-image {
+  background-image: url("../images/pizza_background.png");
+  background-size: center;
+}
+.container, .background-image, .section {
+  height: 100vh;
+}
+.lobster {
+  font-family: 'Lobster', cursive;
+}
+.title {
+  font-size: 8rem;
+}
+.title-h2 {
+  font-size: 5rem;
+}
+.presentation-text {
+  font-size: 1.5rem;
+}
+.btn {
+  border-color: #61120E !important;
+  color: #2D2C2C !important;
+}
+.active {
+  background-color: #61120E !important;
+  color: #f2f2f2 !important;
+}
+.btn-otline-success, .btn:hover {
+  background-color: #61120E !important;
+  color: #f2f2f2 !important;
+}
+.btn, .btn-otline-success {
+  font-size: 1.5rem !important;
+}
+.form {
+  border-radius: 3%
+}
