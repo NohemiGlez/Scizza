@@ -8,7 +8,13 @@ body, .white-background {
   color: #CA2521 !important;
 }
 .peperoni-color {
-  color: #61120E;
+  color: #61120E !important;
+}
+.link-color:hover {
+  color: #ECA442 !important;
+}
+.soft-gray-color {
+  color: #A5A79A;
 }
 .background-image {
   background-image: url("../images/pizza_background.png");
@@ -46,11 +52,16 @@ body, .white-background {
   font-size: 1.5rem !important;
 }
 .user-icon {
-  width: 20%;
+  width: 50%;
 }
-.user-information {
-  padding: 10% 0% 5% 5%;
+.versales-text {
+  font-variant: small-caps;
 }
-li {
-  list-style: none;
+.sidenav {
+  background-image: url("/images/pizza_dash_background.png");
+  background-repeat: no-repeat;
+}
+.border-yellow {
+  border-color: #ECA442;
+  border-width: 2%;
 }
