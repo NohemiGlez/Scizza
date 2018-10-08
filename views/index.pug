@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  div(class='background-image section col-lg-12')
-    div(class='container')
+  div(class='background-image full-height full-height col-lg-12')
+    div(class='container full-height')
       div(class='row h-100')
         div(class='col-sm-12 my-auto')
           h1(class='title lobster')= title
@@ -10,10 +10,10 @@ block content
           button(type='submit' class='m-1 text-center btn btn-outline-success active' data-toggle='modal' data-target='#signup') Registrarse
           button(type='submit' class='m-1 text-center btn btn-outline-success' data-toggle='modal' data-target='#login') Iniciar sesión
           br
-          a(href='#section2' class='arrow-down float-right')
+          a(href='#section2' class='white-color-text float-right')
             i(class='fas fa-5x fa-angle-down' data-toggle='tooltip' data-placement='top' title='¿Por qué SCRUM?')
-  div(class='section' id='section2')
-    div(class='container')
+  div(class='full-height' id='section2')
+    div(class='container full-height')
       div(class='row h-100')
         div(class='col-sm-12 my-auto')
           h2(class='title-h2 lobster text-center') ¿Por qué Scrum?

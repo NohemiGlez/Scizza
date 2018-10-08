@@ -2,5 +2,12 @@ extends layout
 
 block content
     div(class='section')
-        div(class='col-sm-4')
-        div(class='cool-sm-8')
+        div(class='col-sm-3 gray-background full-height')
+            div(class='user-information')
+                img(src='/images/pusheen_pizza.jpg' class='rounded-circle user-icon float-left mr-4')
+                span
+                    ul(list-group)
+                        li(class='presentation-text white-color-text') #{username}
+                        li(class='white-color-text d-inline') #{principalSkill}
+        div(class='col-sm-9')
+            
