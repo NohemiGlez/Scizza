@@ -7,11 +7,19 @@ block content
                 div(class='col-12 col-sm-6 margin-top')
                     div(class='mx-auto user-information text-center' style='width: 300px')
                         br
-                        img(src='/images/pusheen_pizza.jpg' class='rounded-circle user-icon')
+                        a(href='#')
+                            img(src='/images/pusheen_pizza.jpg' class='rounded-circle user-icon' data-toggle='tooltip' data-placement='top' title='Actualiza tu foto de perfil')
                         br
                         span(class='text-centered presentation-text') 
                             p Bienvenido, 
                             b #{username}
+                        p Cambia tu foto de perfil, para que te reconocerán tus compañeros y sepan a quién le comparten de su pizza.
+                        div(class='input-group mb-3 col-12 col-sm-12')
+                            div(class='input-group-prepend')
+                                span(class='input-group-text' id='inputGroupFileAddon01') Subir
+                            div(class='custom-file')
+                                input(type='file' class='custom-file-input' id='inputGroupFile01' aria-describedby='inputGroupFileAddon01')
+                                label(class='custom-file-label' for='inputGroupFile01') Selecc.
                 div(class='col-12 col-sm-6 margin-top')
                     ul(class='nav nav-tabs'  id='tab-profile'  role='tablist') 
                         li(class='nav-item') 
@@ -23,11 +31,24 @@ block content
                     div(class='tab-content peperoni-color'  id='tab-profile-content') 
                         div(class='tab-pane fade show active'  id='skills'  role='tabpanel'  aria-labelledby='profile-tab')
                             br
-                            h3(class='presentation-text') Cuéntanos, ¿en qué eres bueno?
+                            h3(class='presentation-text lobster text-center') Cuéntanos, ¿en qué eres bueno?
+                            br
                             form
-                                
+                                div(class='row')
+                                    div(class='col-12 col-sm-6')
+                                        p(class='presentation-text') Selecciona habilidad
+                                        select(class='custom-select')
+                                            option(selected) Selecciona habilidad
+                                            option(value='1') Java
+                                    div(class='col-12 col-sm-6')
+                                        p(class='presentation-text') Selecciona nivel
+                                        select(class='custom-select')
+                                            option(selected) Selecciona nivel
+                                            option(value='1') Junior
+                                            option(value='2') Master
                         div(class='tab-pane fade'  id='account'  role='tabpanel'  aria-labelledby='home-tab')
                             br
+                            h3(class='presentation-text lobster text-center') Información de tu cuenta
                             form
                                 div(class='form-group')
                                     label(for='username') Nombre de usuario
@@ -43,6 +64,7 @@ block content
                                     input(type='password' class='form-control' id='confirm-password' placeholder='Confirmar contraseña')
                         div(class='tab-pane fade'  id='personal'  role='tabpanel'  aria-labelledby='profile-tab')
                             br
+                            h3(class='presentation-text lobster text-center') Datos personales
                             form
                                 div(class='row')
                                     div(class='form-group col-12 col-sm-6')
@@ -69,8 +91,8 @@ block content
                                         label(for='colonia') Colonia
                                         input(type='text' class='form-control' id='idColonia' aria-describedby='coloniaHelp' placeholder='Pizza Nacional' maxlength='18')
                     div(class='mx-auto' style='width: 200px')
+                        br
                         button(type='submit' class='btn btn-outline-danger m-1') Actualizar perfil
-
-            
-
+                
+                
     

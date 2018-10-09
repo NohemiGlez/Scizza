@@ -56,6 +56,9 @@ body, .white-background {
 .user-icon {
   width: 50%;
 }
+.user-icon:hover {
+  filter:brightness(0.2);
+}
 .versales-text {
   font-variant: small-caps;
 }
@@ -68,5 +71,5 @@ body, .white-background {
   border-width: 2%;
 }
 .margin-top {
-  margin-top: 20%;
+  margin-top: 17%;
 }
