@@ -1,13 +1,32 @@
-extends layout
+include layout
 
-block content
-    div(class='section')
-        div(class='col-sm-3 gray-background full-height')
-            div(class='user-information')
-                img(src='/images/pusheen_pizza.jpg' class='rounded-circle user-icon float-left mr-4')
-                span
-                    ul(list-group)
-                        li(class='presentation-text white-color-text') #{username}
-                        li(class='white-color-text d-inline') #{principalSkill}
-        div(class='col-sm-9')
-            
+div(class='section')
+        div(class='col-sm-2 gray-background full-height sidenav fixed-top')
+            div(class='user-information text-center pt-5')
+                br
+                br
+                img(src='/images/pusheen_pizza.jpg' class='rounded-circle user-icon')
+                p(class='presentation-text white-color-text text-center') #{username}
+                p(class='white-color-text text-center') #{principalSkill}
+                p(class='nav-link versales-text soft-gray-color text-center color-peperoni' id='v-pills-home-tab' data-toggle='pill' role='tab' aria-controls='v-pills-home' aria-selected='true') Editar perfil
+                <div class="dropdown-divider"></div>
+            div(class='nav flex-column nav-pills' id='v-pills-tab' role='tablist' aria-orientation='vertical')
+                br
+                p(class='nav-link versales-text soft-gray-color' id='v-pills-home-tab' data-toggle='pill' role='tab' aria-controls='v-pills-home' aria-selected='true') Organizaciones
+                div(class='ml-5')
+                    img(src='/images/pizza_icon.png' width='30' height='30' class='d-inline-block align-top float-left' alt='Pizza icon')
+                    a(class='nav-link white-color-text link-color' id='v-pills-profile-tab' data-toggle='pill' href='#v-pills-home' role='tab' aria-controls='v-pills-home' aria-selected='true') Scizza
+                div(class='ml-5')
+                    img(src='/images/pizza_icon.png' width='30' height='30' class='d-inline-block align-top float-left' alt='Pizza icon')
+                    a(class='nav-link white-color-text link-color' id='v-pills-profile-tab' data-toggle='pill' href='#v-pills-home' role='tab' aria-controls='v-pills-home' aria-selected='true') Blanco
+                div(class='ml-5')
+                    img(src='/images/pizza_icon.png' width='30' height='30' class='d-inline-block align-top float-left' alt='Pizza icon')
+                    a(class='nav-link white-color-text link-color' id='v-pills-profile-tab' data-toggle='pill' href='#v-pills-home' role='tab' aria-controls='v-pills-home' aria-selected='true') Personal
+                div(class='ml-4')
+                    a(class='nav-link white-color-text link-color' id='v-pills-profile-tab' data-toggle='pill' href='#v-pills-home' role='tab' aria-controls='v-pills-home' aria-selected='true') Agregar
+                        i(class='fas fa-plus float-left ml-3 mr-2')
+                br
+            <div class="dropdown-divider"></div>
+            br
+            p(class='white-color-text text-center') Scizza ® 2018
+
