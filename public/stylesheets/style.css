@@ -10,7 +10,7 @@ body, .white-background {
 .peperoni-color {
   color: #61120E !important;
 }
-.link-color:hover {
+.link-color:hover, .yellow-color {
   color: #ECA442 !important;
 }
 .soft-gray-color {
