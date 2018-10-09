@@ -1,13 +1,13 @@
 let express = require('express');
 let router = express.Router();
-const membersController = require('../controllers/membersController');
+const membersController = require('../controllers/projectsController');
 
-router.post('/', membersController.create);
+router.post('/', projectsController.create);
 
-router.get('/:id?', membersController.read);
+router.get('/:id?', projectsController.read);
 
-router.put('/:id', membersController.update);
+router.put('/:id', projectsController.update);
 
-router.delete('/:id', membersController.destroy);
+router.delete('/:id', projectsController.destroy);
 
 module.exports = router;
