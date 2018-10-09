@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-const membersController = require('../controllers/rolesController');
+const rolesController = require('../controllers/rolesController');
 
 router.post('/', rolesController.create);
 

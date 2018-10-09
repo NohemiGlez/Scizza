@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-const membersController = require('../controllers/projectsController');
+const projectsController = require('../controllers/projectsController');
 
 router.post('/', projectsController.create);
 
