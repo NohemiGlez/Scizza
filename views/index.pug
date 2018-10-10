@@ -7,8 +7,8 @@ block content
         div(class='col-sm-12 my-auto')
           h1(class='title lobster')= title
           p(class='presentation-text') ¿Has oído que los desarrolladores trabajan mejor con pizza? Ingresa para reclamarle tu rebanada a tus compañeros con #{title}; un sitio te proporciona las herramientas necesarias para el desarrollo ágil, basado en la metodología Scrum.
-          button(type='submit' class='m-1 text-center btn btn-outline-success active' data-toggle='modal' data-target='#signup') Registrarse
-          button(type='submit' class='m-1 text-center btn btn-outline-success' data-toggle='modal' data-target='#login') Iniciar sesión
+          button(type='submit' class='m-1 text-center btn btn-danger' data-toggle='modal' data-target='#signup') Registrarse
+          button(type='submit' class='m-1 text-center btn btn-outline-danger' data-toggle='modal' data-target='#login') Iniciar sesión
           br
           a(href='#section2' class='white-color-text float-right')
             i(class='fas fa-5x fa-angle-down' data-toggle='tooltip' data-placement='top' title='¿Por qué SCRUM?')
@@ -43,7 +43,7 @@ block content
               br
               br
               p(class='presentation-text text-center') Promueve autonomía y organización.
-  div(id='login' class='modal fade bd-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
+  div(id='login' class='modal fade bd-example-modal-lg white-background' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
     div(class='modal-dialog modal-dialog-centered modal-lg')
       div(class='modal-content')
         div(class='col-sm-12 my-auto form presentation-text' )
@@ -63,9 +63,9 @@ block content
               input(type='checkbox' class='form-check-input' id='exampleCheck1')
               label(class='form-check-label' for='exampleCheck1') Recordar contraseña
             nav(class='nav justify-content-center')
-              button(type='submit' class='btn btn-outline-success active m-1') Iniciar sesión
+              button(type='submit' class='btn btn-danger m-1') Iniciar sesión
           br
-  div(id='signup' class='modal fade bd-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
+  div(id='signup' class='modal fade bd-example-modal-lg white-background' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
       div(class='modal-dialog modal-dialog-centered modal-lg')
         div(class='modal-content')
           div(class='col-sm-12 my-auto form presentation-text' )
@@ -91,7 +91,7 @@ block content
               p(class='presentation-text text-center') Al registrarte, aceptas nuestros 
                 a(href='#' class='link' target='_blank') términos y condiciones
               nav(class='nav justify-content-center')
-                button(type='submit' class='btn btn-outline-success active m-1') Registrarse
+                button(type='submit' class='btn btn-danger m-1') Registrarse
             br
   footer(class='p-2 gray-background')
       div(class='sticky-bottom white-color-text')

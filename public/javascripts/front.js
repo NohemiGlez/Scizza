@@ -6,4 +6,8 @@ $(document).ready(function () {
         var href = $(this).attr('href');
         $('html, body').animate({ scrollTop: $(href).offset().top }, 'slow');
     });
+    $('.file').hide();
+    $('.open-input-file').click(function(){
+        $('.file').show();
+    });
 });
