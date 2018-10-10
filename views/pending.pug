@@ -64,11 +64,24 @@ block content
               img(src='/images/pizza_icon.png' class='rounded float-left' width='85' height='85')
               h2(class='text-left title-h2 lobster')
                 center Nuevo Proyecto
-              p(class='presentation-text text-center') Empecemos por el nombre ¿Te parece?
+              p(class='presentation-text text-center') Crear Nuevo Proyecto
             form
               div(class='form-group text-left')
                 label(for='exampleInputText') Nombre del Proyecto
                 input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Fecha de Inicio
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Fecha de Arranque
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Product Owner
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Descripción
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
               nav(class='nav justify-content-center')
-                button(type='submit' class='btn btn-danger m-1' style='width: 150px') Crear
+                button(type='submit' class='btn btn-danger m-1' style='width: 150px') 
+                  a(href='/project' style='color: white; text-decoration: none') Crear
             br

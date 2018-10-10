@@ -63,16 +63,20 @@ block content
               input(type='checkbox' class='form-check-input' id='exampleCheck1')
               label(class='form-check-label' for='exampleCheck1') Recordar contraseña
             nav(class='nav justify-content-center')
-              button(type='submit' class='btn btn-danger m-1') Iniciar sesión
+              button(type='submit' class='btn btn-danger m-1') 
+                a(href='/profile' style='color: white; text-decoration: none') Iniciar sesión
             hr
             div(class='container')
               div(class='row')
                 div(class='col-sm' style='text-align: center')
-                  img(src='/images/facebook_icon.png' class='rounded' width='85' height='85')
+                  a(href='/profile')
+                    img(src='/images/facebook_icon.png' class='rounded' width='85' height='85')
                 div(class='col-sm' style='text-align: center')
-                  img(src='/images/github_icon.png' class='rounded' width='85' height='85')
+                  a(href='/profile')
+                    img(src='/images/github_icon.png' class='rounded' width='85' height='85')
                 div(class='col-sm' style='text-align: center')
-                  img(src='/images/google_icon.png' class='rounded' width='85' height='85')
+                  a(href='/profile')
+                    img(src='/images/google_icon.png' class='rounded' width='85' height='85')
           br
   div(id='signup' class='modal fade bd-example-modal-lg white-background' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
       div(class='modal-dialog modal-dialog-centered modal-lg')
@@ -103,16 +107,20 @@ block content
               p(class='presentation-text text-center') Al registrarte, aceptas nuestros 
                 a(href='#' class='link' target='_blank') términos y condiciones
               nav(class='nav justify-content-center')
-                button(type='submit' class='btn btn-danger m-1') Registrarse
+                button(type='submit' class='btn btn-danger m-1') 
+                  a(href='/profile' style='color: white; text-decoration: none') Registrarse
             hr
             div(class='container')
               div(class='row')
                 div(class='col-sm' style='text-align: center')
-                  img(src='/images/facebook_icon.png' class='rounded' width='85' height='85')
+                  a(href='/profile')
+                    img(src='/images/facebook_icon.png' class='rounded' width='85' height='85')
                 div(class='col-sm' style='text-align: center')
-                  img(src='/images/github_icon.png' class='rounded' width='85' height='85')
+                  a(href='/profile')
+                    img(src='/images/github_icon.png' class='rounded' width='85' height='85')
                 div(class='col-sm' style='text-align: center')
-                  img(src='/images/google_icon.png' class='rounded' width='85' height='85')
+                  a(href='/profile')
+                    img(src='/images/google_icon.png' class='rounded' width='85' height='85')
             br
   footer(class='p-2 gray-background')
       div(class='sticky-bottom white-color-text')
