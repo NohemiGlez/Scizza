@@ -73,3 +73,15 @@ body, .white-background {
 .margin-top {
   margin-top: 17%;
 }
+
+.product-backlog-card {
+  margin-top: 10%;
+  border-style: solid;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.product-backlog-card:hover {
+  background-color:#61120E;
+  color: white !important;
+}
