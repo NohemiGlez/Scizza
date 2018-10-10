@@ -1,0 +1,84 @@
+extends dashboard_base
+
+block content
+    div(class='col-sm-12')
+        div(class='col-sm-10 offset-sm-2')
+            div(class='row h-100 full-height')
+                div(class='col-12 col-sm-3' style='margin-top: 7%')
+                    div(class='mx-auto user-information text-center' style='width: 300px')
+                        br
+                        a(href='#')
+                            img(src='/images/pusheen_pizza.jpg' class='open-input-file rounded-circle user-icon' data-toggle='tooltip' data-placement='top' title='Actualiza tu foto de proyecto')
+                        br
+                        span(class='text-centered presentation-text') 
+                            p Proyecto, 
+                            b #{username}
+                        p Cambia tu foto de proyecto, sera mas fácil distinguir en que proyecto estas trabajando.
+                        div(class='input-group mb-3 col-12 col-sm-12 file')
+                            div(class='input-group-prepend')
+                                span(class='input-group-text' id='inputGroupFileAddon01') Subir
+                            div(class='custom-file')
+                                input(type='file' class='custom-file-input' id='inputGroupFile01' aria-describedby='inputGroupFileAddon01')
+                                label(class='custom-file-label' for='inputGroupFile01') Selecc.
+                div(class='col-12 col-sm-1 margin-top' style='margin-top: 7%')
+                div(class='col-12 col-sm-8 margin-top' style='margin-top: 7%')
+                    
+                    div(class='peperoni-color'  id='tab-profile-content') 
+                        div(id='skills')
+                            br
+                            h2(class='lobster text-center') Detalles: Proyecto
+                            br
+                            form
+                              div(class='row')
+                                  div(class='col-12 col-sm-6')
+                                      p(class='presentation-text') Nombre Proyecto
+                                      p Proyecto chido 😎
+                                  div(class='col-12 col-sm-6')
+                                      p(class='presentation-text') Product Owner
+                                      p Alonzo Garcia
+                              br
+                              div(class='row')
+                                  div(class='col-12 col-sm-6')
+                                      p(class='presentation-text') Fecha de Inicio
+                                      p 10/10/2018
+                                  div(class='col-12 col-sm-6')
+                                      p(class='presentation-text') Fecha de Arranque
+                                      p 12/11/2018
+                              div(class='row')
+                                  div(class='col-12 col-sm-12')
+                                      p(class='presentation-text') Descripción
+                                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare. Duis convallis convallis tellus id interdum velit. Adipiscing bibendum est ultricies integer quis auctor. Diam ut venenatis tellus in metus vulputate eu scelerisque. Vitae ultricies leo integer malesuada nunc vel. Ultrices neque ornare aenean euismod elementum nisi. Euismod nisi porta lorem mollis. Massa id neque aliquam vestibulum.
+                        
+                    div(class='mx-auto' style='width: 200px')
+                        br
+                        button(type='submit' class='btn btn-outline-danger m-1') Editar
+
+                div(class='col-12 col-sm-4 peperoni-color' style='margin-top: 10%; margin-left: 4%; border-style: solid; border-radius: 15px;')
+                    div(class='mx-auto user-information text-center')
+                        h2(class='lobster text-center' style='margin: 3% 0% 3%') Product Backlog
+                        hr
+                        div(class='text-center' style='height: 20px;')
+                          a(href='#' class='link') Crear Nueva Tarea
+                        hr
+                        div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
+                          div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
+                            p Tarea 1
+                        div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
+                          div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
+                            p Tarea 2
+                        div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
+                          div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
+                            p Tarea 3
+                        br
+                div(class='col-12 col-sm-1 peperoni-color')
+                  div(style='border-left: 5px dotted #61120E; height: 70%; margin: 100% 50%; 100%; margin-top: 160%;')
+                div(class='col-12 col-sm-6 peperoni-color' style='margin-top: 10%; margin-right: 4%; border-style: solid; border-radius: 15px;')
+                    div(class='mx-auto user-information text-center')
+                        h2(class='lobster text-center' style='margin: 3% 0% 3%') Release Backlog
+                        br
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare. Duis convallis convallis tellus id interdum velit. Adipiscing bibendum est ultricies integer quis auctor. Diam ut venenatis tellus in metus vulputate eu scelerisque. Vitae ultricies leo integer malesuada nunc vel. Ultrices neque ornare aenean euismod elementum nisi. Euismod nisi porta lorem mollis. Massa id neque aliquam vestibulum. Odio morbi quis commodo odio aenean sed adipiscing diam donec. 
+
+
+                  
+    br
+    br
