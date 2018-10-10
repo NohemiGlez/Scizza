@@ -26,14 +26,16 @@ body, .white-background {
 .lobster {
   font-family: 'Lobster', cursive;
 }
-.btn {
-  border-color: #61120E !important;
-  color: #2D2C2C !important;
+.btn-danger, .btn-outline-danger {
+   border-color: #61120E !important;
 }
-.btn-otline-success, .btn:hover, .active {
+.btn-danger, .btn-outline-danger:hover {
   background-color: #61120E !important;
 }
-.btn-otline-success, .btn:hover, .active, .white-color-text {
+.btn-outline-danger {
+  color: #61120E !important;
+}
+.white-color-text, .btn-outline-danger:hover {
   color: #f2f2f2 !important;
 }
 .form {
@@ -54,6 +56,9 @@ body, .white-background {
 .user-icon {
   width: 50%;
 }
+.user-icon:hover {
+  filter:brightness(0.2);
+}
 .versales-text {
   font-variant: small-caps;
 }
@@ -64,4 +69,7 @@ body, .white-background {
 .border-yellow {
   border-color: #ECA442;
   border-width: 2%;
+}
+.margin-top {
+  margin-top: 17%;
 }
