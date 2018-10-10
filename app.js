@@ -10,6 +10,7 @@ var membersRouter = require('./routes/members');
 var projectsRouter = require('./routes/projects');
 var rolesRouter = require('./routes/roles');
 var loginRouter = require('./routes/login');
+var pendingRouter = require('./routes/pending');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/members', membersRouter);
 app.use('/projects', projectsRouter);
 app.use('/roles', rolesRouter);
 app.use('/login', loginRouter);
+app.use('/pending', pendingRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
