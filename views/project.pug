@@ -58,7 +58,7 @@ block content
                         h2(class='lobster text-center' style='margin: 3% 0% 3%') Product Backlog
                         hr
                         div(class='text-center' style='height: 20px;')
-                          a(href='#' class='link') Crear Nueva Tarea
+                          a(href='#' class='link' data-toggle='modal' data-target='#create') Crear Nueva Tarea
                         hr
                         div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
                           div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
@@ -76,9 +76,53 @@ block content
                     div(class='mx-auto user-information text-center')
                         h2(class='lobster text-center' style='margin: 3% 0% 3%') Release Backlog
                         br
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa tincidunt dui ut ornare. Duis convallis convallis tellus id interdum velit. Adipiscing bibendum est ultricies integer quis auctor. Diam ut venenatis tellus in metus vulputate eu scelerisque. Vitae ultricies leo integer malesuada nunc vel. Ultrices neque ornare aenean euismod elementum nisi. Euismod nisi porta lorem mollis. Massa id neque aliquam vestibulum. Odio morbi quis commodo odio aenean sed adipiscing diam donec. 
+                        div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
+                          div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
+                            p Tarea 1
+                        div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
+                          div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
+                            p Tarea 2
+                        div(class='col-12 col-sm-12 peperoni-color product-backlog-card')
+                          div(class='mx-auto user-information text-center' style='margin: 3% 0% 3%')
+                            p Tarea 3
+                        br
 
-
-                  
     br
     br
+
+
+    div(id='create' class='modal fade bd-example-modal-lg white-background' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
+      div(class='modal-dialog modal-dialog-centered modal-lg')
+        div(class='modal-content')
+          div(class='col-sm-12 my-auto form presentation-text' )
+            br
+            div(class='mx-auto' style='width: 750px')
+              img(src='/images/pizza_icon.png' class='rounded float-left' width='85' height='85')
+              h2(class='text-left title-h2 lobster')
+                center Nueva Tarea
+                br
+            form
+              p(class='presentation-text text-center') Narrativa de Historia
+              div(class='form-group text-left')
+                label(for='exampleInputText') Como
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Quiero
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') De tal manera
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              p(class='presentation-text text-center') Criterios de aceptación
+              div(class='form-group text-left')
+                label(for='exampleInputText') Dado
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Cuando
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              div(class='form-group text-left')
+                label(for='exampleInputText') Entonces
+                input(type='text' class='form-control' id='exampleInputText' aria-describedby='emailHelp' placeholder='Proyecto chido 😎')
+              nav(class='nav justify-content-center')
+                button(type='submit' class='btn btn-danger m-1' style='width: 150px') 
+                  a(href='/project' style='color: white; text-decoration: none') Crear
+            br
