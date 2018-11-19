@@ -1,0 +1,12 @@
+extends ../layout
+block content
+  h1 developerTeams
+  br
+  br
+  br
+  select
+    each developerTeam in developerTeams.docs
+      option(value="hola") #{developerTeam.teamName}
+
+    
+    

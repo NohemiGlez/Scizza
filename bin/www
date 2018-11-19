@@ -4,28 +4,45 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('scrumanyzed:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('scizza:server');
+const http = require('http');
+const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
+
+// mongodb://<dbUser>?:<dbPassword>?@<direction>:<port>/<dbName>>
+
+const uri = 'mongodb://draw:draw2018@ds211724.mlab.com:11724/scizzadb';
+
+mongoose.connect(uri);
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console,
+'NO se puede conectar a la base de datos.'));
+
+db.on('open', ()=>{
+  server.listen(port, ()=>{
+    console.log('La conexion a mongodb es exitosa!');
+  });
+})
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 

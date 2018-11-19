@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
 
 const schema = Schema({
   _id: ObjectId,
