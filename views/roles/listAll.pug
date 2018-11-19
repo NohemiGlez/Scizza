@@ -1,0 +1,15 @@
+extends ../layout
+block content
+  h1 Productos
+  table
+    thead
+      tr
+        th Rol
+        th Permisos
+    tbody
+      each role in roles.docs
+        tr
+          td #{role.roleName} 
+          td #{role.permission}
+    
+    
