@@ -4,10 +4,12 @@ const projectsController = require('../controllers/projectsController');
 
 router.post('/', projectsController.create);
 
-router.get('/:id?', projectsController.read);
+router.get('/get', projectsController.listAll);
 
-router.put('/:id', projectsController.update);
+router.get('/show/:id?', projectsController.listOne);
 
-router.delete('/:id', projectsController.destroy);
+router.put('/edit/:id?', projectsController.update);
+
+router.delete('/delete/:id?', projectsController.destroy);
 
 module.exports = router;

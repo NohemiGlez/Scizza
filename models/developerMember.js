@@ -13,7 +13,7 @@ const schema = Schema({
   _twitter_provider_id: String,
   _google_provider_id: String,
   _fullName: String,
-  _birthDate: {type: Date},
+  _birthDate: { type: Date },
   _curp: String,
   _rfc: String,
   _address: String,

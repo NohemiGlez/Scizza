@@ -20,13 +20,14 @@ function create(req, res, next) {
     _twitter_provider_id: req.body.twitter_provider_id,
     _google_provider_id: req.body.google_provider_id,
     _fullName: req.body.fullName,
-    _birthDate: new Date(req.body.birthDate),
+    _birthDate: req.body.birthDate,
     _curp: req.body.curp,
     _rfc: req.body.rfc,
     _address: req.body.address,
     _team: req.body.team,
     _role: req.body.role
   });
+  // EL formato de fecha para insertar es YYYY-MM-DD
 
   developerMember.save()
     .then((obj)=>{
