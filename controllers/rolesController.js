@@ -33,7 +33,7 @@ function create(req, res, next) {
 
 function listAll(req, res, next) {
 
-  let page = req.params.page ? req.params.page : 2;
+  let page = req.params.page ? req.params.page : 1;
   const options = {
     page: 1,
     limit: 10,

@@ -1,0 +1,32 @@
+extends ../layout
+block content
+  p Solo lo hice para hacer un render de prueba con los miembros (Ya no se usa)
+  h1 Miembros
+  table
+    thead
+      tr
+        th Facebook
+        th Twitter
+        th Google
+        th Nombre completo
+        th Fecha de nacimiento
+        th Curp
+        th RFC
+        th Direccion
+        th Equipo
+        th Rol 
+    tbody
+      each developerMember in developerMembers.docs
+        tr
+          td #{developerMember.facebook_provider_id} 
+          td #{developerMember.twitter_provider_id}
+          td #{developerMember.google_provider_id}
+          td #{developerMember.fullName}
+          td #{developerMember.birthDate} 
+          td #{developerMember.curp} 
+          td #{developerMember.rfc} 
+          td #{developerMember.address} 
+          td #{developerMember.team}
+          td #{developerMember.role}  
+    
+    
