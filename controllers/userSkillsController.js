@@ -1,7 +1,6 @@
 const express = require('express');
+const UserSkill = require('../models/userSkill');
 const DeveloperMember = require('../models/developerMember');
-const DeveloperTeam = require('../models/developerTeam');
-const Role = require('../models/role');
 const {validationResult} = require('express-validator/check');
 const ObjectID = require('mongodb').ObjectID;
 
@@ -14,21 +13,13 @@ function create(req, res, next) {
     });
   }
 
-  let developerMember = new DeveloperMember({
+  let userSkill = new UserSkill({
     _id: req.body.id ? req.body.id : new ObjectID(),
-    _facebook_provider_id: req.body.facebook_provider_id,
-    _twitter_provider_id: req.body.twitter_provider_id,
-    _google_provider_id: req.body.google_provider_id,
-    _fullName: req.body.fullName,
-    _birthDate: new Date(req.body.birthDate),
-    _curp: req.body.curp,
-    _rfc: req.body.rfc,
-    _address: req.body.address,
-    _team: req.body.team,
-    _role: req.body.role
+    _user: req.body.user,
+    _skill: req.body.skill
   });
 
-  developerMember.save()
+  userSkill.save()
     .then((obj)=>{
       res.status(200).json({
         errors: [],
@@ -51,16 +42,14 @@ function listAll(req, res, next) {
   const options = {
     page: 1,
     limit: 10,
-    select: '_facebook_provider_id _twitter_provider_id _google_provider_id _fullName _birthDate _curp _rfc _address _team _role'
+    select: '_user _skill'
   }
 
   //DeveloperMember.paginate({}, options)
-    DeveloperMember.find({}, (err, developerMembers)=>{
-      DeveloperTeam.populate(developerMembers, {path: "_team"}, (err, developerMembers)=>{
-      });
-      Role.populate(developerMembers, {path: "_role"}, (err, developerMembers)=>{
-        res.status(200).send(developerMembers);
-        // Aqui devuelve el json con jsons
+    UserSkill.find({}, (err, userSkills)=>{
+      DeveloperMember.populate(userSkills, {path: "_user"}, (err, userSkills)=>{
+        res.status(200).send(userSkills);
+        // Aqui devuelve el json con json.
       });
 
     }).catch((err)=>{
@@ -74,7 +63,7 @@ function listAll(req, res, next) {
 
 function listOne(req, res, next) {
 
-  DeveloperMember.findById(req.params.id)
+  UserSkill.findById(req.params.id)
       .then((obj)=>{
         res.status(200).json({
           errors: [],
@@ -92,18 +81,10 @@ function listOne(req, res, next) {
 
 function update(req, res, next) {
 
-  DeveloperMember.findById(req.params.id)
+  UserSkill.findById(req.params.id)
   .then((obj)=>{
-    obj.facebook_provider_id = req.body.facebook_provider_id ? req.body.facebook_provider_id : obj.facebook_provider_id;
-    obj.twitter_provider_id = req.body.twitter_provider_id ? req.body.twitter_provider_id : obj.twitter_provider_id;
-    obj.google_provider_id = req.body.google_provider_id ? req.body.google_provider_id : obj.google_provider_id;
-    obj.fullName = req.body.fullName ? req.body.fullName : obj.fullName;
-    obj.birthDate = req.body.birthDate ? req.body.birthDate : obj.birthDate;
-    obj.curp = req.body.curp ? req.body.curp : obj.curp;
-    obj.rfc = req.body.rfc ? req.body.rfc : obj.rfc;
-    obj.address = req.body.address ? req.body.address : obj.address;
-    obj.team = req.body.team ? req.body.team : obj.team;
-    obj.role = req.body.role ? req.body.role : obj.role;
+    obj.user = req.body.user ? req.body.user : obj.user;
+    obj.skill = req.body.skill ? req.body.skill : obj.skill;
     obj.save()
     .then((obj)=>{
       res.status(200).json({
@@ -129,7 +110,7 @@ function update(req, res, next) {
 
 function destroy(req, res, next) {
 
-  DeveloperMember.remove({_id: req.params.id})
+  UserSkill.remove({_id: req.params.id})
   .then((obj)=>{
     res.status(200).json({
       errors: [],

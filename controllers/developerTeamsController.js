@@ -13,7 +13,7 @@ function create(req, res, next) {
   }
 
   let developerTeam = new DeveloperTeam({
-    _id: new ObjectID(req.body.id) ? req.body.id : new ObjectID(),
+    _id: req.body.id ? req.body.id : new ObjectID(),
     _teamName:req.body.teamName
   });
 
