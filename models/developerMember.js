@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
-require('../models/developerTeam');
-require('../models/role');
-const DeveloperTeam = mongoose.model('DeveloperTeam');
-const Role = mongoose.model('Role');
+//require('../models/developerTeam');
+//require('../models/role');
+//const DeveloperTeam = mongoose.model('DeveloperTeam');
+//const Role = mongoose.model('Role');
 const Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
@@ -17,13 +17,14 @@ const schema = Schema({
   _curp: String,
   _rfc: String,
   _address: String,
-  _team: { type: ObjectId, ref: 'DeveloperTeam' },
-  _role: { type: ObjectId, ref: 'Role' }
+  _team: String,
+  _role: String,
+  _permission: Number
 });
 
 class DeveloperMember{
   constructor(id, facebook_provider_id, twitter_provider_id,
-  google_provider_id, fullName, birthDate, curp, rfc, address, team, role){
+  google_provider_id, fullName, birthDate, curp, rfc, address, team, role, permission){
     this._id = id;
     this._facebook_provider_id = facebook_provider_id;
     this._twitter_provider_id = twitter_provider_id;
@@ -35,6 +36,7 @@ class DeveloperMember{
     this._address = address;
     this._team = team;
     this._role = role;
+    this._permission = permission;
   }
 
   get id(){
@@ -123,6 +125,14 @@ class DeveloperMember{
 
   set role(v){
     this._role = v;
+  }
+
+  get permission(){
+    return this._permission;
+  }
+
+  set role(v){
+    this._permission = v;
   }
 
 }
