@@ -1,7 +1,7 @@
 const express = require('express');
 const Project = require('../models/project');
-const DeveloperMember = require('../models/developerMember');
-const DeveloperTeam = require('../models/developerTeam');
+//const DeveloperMember = require('../models/developerMember');
+//const DeveloperTeam = require('../models/developerTeam');
 const {validationResult} = require('express-validator/check');
 const ObjectID = require('mongodb').ObjectID;
 
@@ -52,7 +52,8 @@ function listAll(req, res, next) {
     select: '_projectName _projectRequestDate _projectStartDate _projectDescription _projectManager _productOwner _developerTeam'
   }
 
-  //DeveloperMember.paginate({}, options)
+
+  /*
     Project.find({}, (err, projects)=>{
       DeveloperMember.populate(projects, {path: "_projectManager"}, (err, projects)=>{
       });
@@ -62,7 +63,11 @@ function listAll(req, res, next) {
         res.status(200).send(projects);
         // Aqui devuelve el json con jsons
       });
-
+    */
+    Project.paginate({}, options)
+    .then((objs)=>{
+      //res.render('projects/listAll',{projects:objs});
+      res.status(200).send(objs);
     }).catch((err)=>{
       res.status(500).json({
         errors: [{message: 'Algo salió mal :c'}],

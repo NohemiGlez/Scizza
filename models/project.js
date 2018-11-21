@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 require('../models/developerTeam');
 require('../models/developerMember');
-const DeveloperTeam = mongoose.model('DeveloperTeam');
-const DeveloperMember = mongoose.model('DeveloperMember');
+//const DeveloperTeam = mongoose.model('DeveloperTeam');
+//const DeveloperMember = mongoose.model('DeveloperMember');
 const Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
@@ -13,9 +13,9 @@ const schema = Schema({
   _projectRequestDate: { type: Date },
   _projectStartDate: { type: Date },
   _projectDescription: String,
-  _projectManager: { type: ObjectId, ref: 'DeveloperMember' },
-  _productOwner: { type: ObjectId, ref: 'DeveloperMember' },
-  _developerTeam: { type: ObjectId, ref: 'DeveloperTeam' }
+  _projectManager: String,
+  _productOwner: String,
+  _developerTeam: String
 });
 
 class Project{
