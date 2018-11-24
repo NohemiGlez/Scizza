@@ -17,7 +17,7 @@ const schema = Schema({
     _then: String
 });
 
-class card{
+class Card{
 
     constructor(id, backlogId, asRole, want, soThat, priority, size, given, when, then) {
         this._id = id;
@@ -114,5 +114,5 @@ class card{
 }
 
 schema.plugin(mongoosePaginate);
-schema.loadClass(DeveloperMember);
-module.exports = mongoose.model('DeveloperMember', schema);
+schema.loadClass(Card);
+module.exports = mongoose.model('Card', schema);
