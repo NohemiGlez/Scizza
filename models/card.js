@@ -25,11 +25,11 @@ class Card{
         this._asRole = asRole;
         this._want = want;
         this._soThat = soThat;
+        this._priority = priority;
         this._size = size;
         this._given = given;
         this._when = when;
         this._then = then;
-        this._priority = priority;
     }
 
     get id() {
