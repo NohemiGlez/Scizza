@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passportSetup = require('./config/passportSetup');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const profileRouter = require('./routes/profile');
