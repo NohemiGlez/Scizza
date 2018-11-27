@@ -12,15 +12,23 @@ passport.use(
     clientSecret: keys.google.clientSecret
 
   }, (accessToken, refreshToken, profile, done) => {
-    // passport callback function
-    console.log('passport callback function fired');
-    console.log(profile);
-    new DeveloperMember({
-      _id: new ObjectID(),
-      _google_provider_id: profile.id,
-      _fullName: profile.displayName
-    }).save().then((newDeveloperMember) => {
-      console.log('Nuevo usuario: ' + newDeveloperMember);
+    // comprobar si ya existe el usuario
+    DeveloperMember.findOne({
+      _google_provider_id: profile.id
+    }).then((currentDeveloperMember) => {
+      if(currentDeveloperMember) {
+        // ya existe el usuario
+        console.log('El usuario ya existe: ', currentDeveloperMember);
+      } else {
+        // si no existe el usuario se crea en la base de datos
+        new DeveloperMember({
+          _id: new ObjectID(),
+          _google_provider_id: profile.id,
+          _fullName: profile.displayName
+        }).save().then((newDeveloperMember) => {
+          console.log('Nuevo usuario: ' + newDeveloperMember);
+        });
+      }
     });
   })
 );
