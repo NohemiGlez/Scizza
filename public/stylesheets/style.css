@@ -17,8 +17,8 @@ body, .white-background {
   color: #A5A79A;
 }
 .background-image {
-  background-image: url("../images/pizza_background.png");
-  background-size: center;
+  background-image: url("../images/team_pizza.jpg");
+  background-size: cover;
 }
 .full-height {
   height: 100vh;

@@ -1,128 +1,18 @@
 extends layout
 
 block content
-  div(class='background-image full-height full-height col-lg-12')
-    div(class='container full-height')
-      div(class='row h-100')
-        div(class='col-sm-12 my-auto')
-          h1(class='title lobster')= title
-          p(class='presentation-text') ¿Has oído que los desarrolladores trabajan mejor con pizza? Ingresa para reclamarle tu rebanada a tus compañeros con #{title}; un sitio te proporciona las herramientas necesarias para el desarrollo ágil, basado en la metodología Scrum.
-          button(type='submit' class='m-1 text-center btn btn-danger' data-toggle='modal' data-target='#signup') Registrarse
-          button(type='submit' class='m-1 text-center btn btn-outline-danger' data-toggle='modal' data-target='#login') Iniciar sesión
-          br
-          a(href='#section2' class='white-color-text float-right')
-            i(class='fas fa-5x fa-angle-down' data-toggle='tooltip' data-placement='top' title='¿Por qué SCRUM?')
-  div(class='full-height' id='section2')
-    div(class='container full-height')
-      div(class='row h-100')
-        div(class='col-sm-12 my-auto')
-          h2(class='title-h2 lobster text-center') ¿Por qué Scrum?
-          br
-          p(class='presentation-text text-center')
-            i Scrum = reglas + espíritu + buenas prácticas
-          br
-          br
-          div(class='row mt-5')
-            div(class='col-md-3 text-center')
-              i(class='peperoni-color fas fa-7x fa-stopwatch')
-              br
-              br
-              p(class='presentation-text text-center') Fomenta la productividad y predicción de tiempos.
-            div(class='col-md-3 text-center')
-              i(class='peperoni-color fas fa-7x fa-dollar-sign')
-              br
-              br
-              p(class='presentation-text text-center') Ayuda a estimar costos y riesgos en el proyecto.
-            div(class='col-md-3 text-center')
-              i(class='peperoni-color fas fa-7x fa-hands-helping')
-              br
-              br
-              p(class='presentation-text text-center') Promueve motivación y compromiso por el equipo de desarrollo.
-            div(class='col-md-3 text-center')
-              i(class='peperoni-color fas fa-7x fa-building')
-              br
-              br
-              p(class='presentation-text text-center') Promueve autonomía y organización.
-  div(id='login' class='modal fade bd-example-modal-lg white-background' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
-    div(class='modal-dialog modal-dialog-centered modal-lg')
-      div(class='modal-content')
-        div(class='col-sm-12 my-auto form presentation-text' )
-          br
-          div(class='mx-auto' style='width: 550px')
-            img(src='/images/pizza_icon.png' class='rounded float-left' width='85' height='85')
-            h2(class='text-left title-h2 lobster') Iniciar sesión
-            p(class='presentation-text text-center') ¿Ya tienes una cuenta? Inicia sesión para ver las pizzas que te deben tus compañeros de equipo.
-          form
-            div(class='form-group text-left')
-              label(for='exampleInputEmail1') Correo electrónico
-              input(type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp' placeholder='yumi_pizza@scizza.com')
-            div(class='form-group')
-              label(for='exampleInputPassword1') Contraseña
-              input(type='password' class='form-control' id='exampleInputPassword1' placeholder='Contraseña')
-            div(class='form-group form-check')
-              input(type='checkbox' class='form-check-input' id='exampleCheck1')
-              label(class='form-check-label' for='exampleCheck1') Recordar contraseña
-            nav(class='nav justify-content-center')
-              button(type='submit' class='btn btn-danger m-1') 
-                a(href='/profile' style='color: white; text-decoration: none') Iniciar sesión
-            hr
-            div(class='container')
-              div(class='row')
-                div(class='col-sm' style='text-align: center')
-                  a(href='/profile')
-                    img(src='/images/facebook_icon.png' class='rounded' width='85' height='85')
-                div(class='col-sm' style='text-align: center')
-                  a(href='/profile')
-                    img(src='/images/github_icon.png' class='rounded' width='85' height='85')
-                div(class='col-sm' style='text-align: center')
-                  a(href='/profile')
-                    img(src='/images/google_icon.png' class='rounded' width='85' height='85')
-          br
-  div(id='signup' class='modal fade bd-example-modal-lg white-background' tabindex='-1' role='dialog' aria-labelledby='registrarse-modal' aria-hidden='true')
-      div(class='modal-dialog modal-dialog-centered modal-lg')
-        div(class='modal-content')
-          div(class='col-sm-12 my-auto form presentation-text' )
-            br
-            div(class='mx-auto' style='width: 550px')
-              img(src='/images/pizza_icon.png' class='rounded float-left' width='85' height='85')
-              h2(class='text-left title-h2 lobster') Registrarse
-              p(class='presentation-text text-center') Regístrate para compartir pizza y proyectos con tus compañeros de equipo. Una vez que te registres, te mandaremos una pizza por correo electrónico.
-            form
-              div(class='form-group text-left')
-                label(for='exampleInputName') Nombre
-                input(type='text' class='form-control' id='exampleInputName' aria-describedby='emailHelp' placeholder='Larry Hérnandez')
-              div(class='form-group text-left')
-                label(for='exampleInputEmail1') Correo electrónico
-                input(type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp' placeholder='yumi_pizza@scizza.com')
-              div(class='form-group text-left')
-                label(for='exampleInputEmail1') Confirmación de correo electrónico
-                input(type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp' placeholder='yumi_pizza@scizza.com')
-              div(class='form-group')
-                label(for='exampleInputPassword1') Contraseña
-                input(type='password' class='form-control' id='exampleInputPassword1' placeholder='Contraseña')
-                small(id='emailHelp' class='form-text text-muted') Escribe una contraseña de mínimo seis caracteres, con una letra mayúsucla y un número.
-              div(class='form-group')
-                label(for='exampleInputPassword1') Confimación de contraseña
-                input(type='password' class='form-control' id='exampleInputPassword1' placeholder='Contraseña')
-              p(class='presentation-text text-center') Al registrarte, aceptas nuestros 
-                a(href='#' class='link' target='_blank') términos y condiciones
-              nav(class='nav justify-content-center')
-                button(type='submit' class='btn btn-danger m-1') 
-                  a(href='/profile' style='color: white; text-decoration: none') Registrarse
-            hr
-            div(class='container')
-              div(class='row')
-                div(class='col-sm' style='text-align: center')
-                  a(href='/profile')
-                    img(src='/images/facebook_icon.png' class='rounded' width='85' height='85')
-                div(class='col-sm' style='text-align: center')
-                  a(href='/profile')
-                    img(src='/images/github_icon.png' class='rounded' width='85' height='85')
-                div(class='col-sm' style='text-align: center')
-                  a(href='/profile')
-                    img(src='/images/google_icon.png' class='rounded' width='85' height='85')
-            br
-  footer(class='p-2 gray-background')
-      div(class='sticky-bottom white-color-text')
-        p(class='presentation-text text-center') ® #{title} Todos los derechos reservados, 2018
+  div(class='row no-gutters')
+    div(class='col-sm-5 background-image full-height position-sticky')
+    div(class='col-sm-7 full-height p-5')
+      br
+      br
+      h1(class='title lobster pt-5')= title
+      p(class='presentation-text pb-5') ¿Has oído que los desarrolladores trabajan mejor con pizza? Inicia sesión para reclamarle tu rebanada a tus compañeros de trabajo con #{title}; un sitio te proporciona las herramientas necesarias para el desarrollo de software ágil, basado en la metodología SCRUM.
+      div(class='dropdown-divider')
+      p(class='presentation-text text-center pt-5') Inicia sesión con
+      div(class='pull-right d-flex justify-content-center')
+        button(type='submit' class='m-1 text-center btn btn-outline-danger fab fa-facebook-f')
+        button(type='submit' class='m-1 text-center btn btn-outline-danger fab fa-twitter')
+        button(type='submit' class='m-1 text-center btn btn-outline-danger fab fa-google-plus-g')
+      p(class='presentation-text text-center pt-5') Scizza 2018®    
             
