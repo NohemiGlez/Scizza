@@ -1,21 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var profileRouter = require('./routes/profile');
-var developerMembersRouter = require('./routes/developerMembers');
-var projectsRouter = require('./routes/projects');
-var loginRouter = require('./routes/login');
-var pendingRouter = require('./routes/pending');
-var finishedRouter = require('./routes/finished');
-var projectRouter = require('./routes/project');
-var developerTeamsRouter = require('./routes/developerTeams');
-var userSkillsRouter = require('./routes/userSkills');
+const indexRouter = require('./routes/index');
+const profileRouter = require('./routes/profile');
+const developerMembersRouter = require('./routes/developerMembers');
+const projectsRouter = require('./routes/projects');
+const authSocialLoginRouter = require('./routes/authSocialLogin');
+const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
+const pendingRouter = require('./routes/pending');
+const finishedRouter = require('./routes/finished');
+const projectRouter = require('./routes/project');
+const developerTeamsRouter = require('./routes/developerTeams');
+const userSkillsRouter = require('./routes/userSkills');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,7 +33,9 @@ app.use('/', indexRouter);
 app.use('/profile', profileRouter);
 app.use('/developerMembers', developerMembersRouter);
 app.use('/projects', projectsRouter);
+app.use('/auth', authSocialLoginRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/pending', pendingRouter);
 app.use('/finished', finishedRouter);
 app.use('/project', projectRouter);
