@@ -49,7 +49,7 @@ passport.use(
 
 passport.use (
   new LinkedInStrategy({
-    callbackURL: 'auth/linkedin/redirect',
+    callbackURL: 'http://localhost:3000/auth/linkedin/redirect',
     clientID: keys.linkedin.clientID,
     clientSecret: keys.linkedin.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
@@ -67,7 +67,7 @@ passport.use (
         new DeveloperMember({
           _id: new ObjectID(),
           _linkedin_provider_id: profile.id,
-          _fullName: profile.firstName
+          _fullName: profile.firstname
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
