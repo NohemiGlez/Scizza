@@ -66,7 +66,7 @@ passport.use (
         new DeveloperMember({
           _id: new ObjectID(),
           _linkedin_provider_id: profile.id,
-          //_fullName: profile.displayName
+          _fullName: profile.displayName
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
@@ -91,7 +91,8 @@ passport.use(
       } else {
         new DeveloperMember({
           _id: new ObjectID(),
-          _github_provider_id: profile.id
+          _github_provider_id: profile.id,
+          _fullName: profile.displayName
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
