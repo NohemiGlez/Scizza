@@ -4,6 +4,16 @@ const keys = require('./keys');
 const DeveloperMember = require('../models/developerMember');
 const ObjectID = require('mongodb').ObjectID;
 
+passport.serializeUser((developerMember, done) => {
+  done(null, developerMember.id);
+});
+
+passport.deserializeUser((id, done) => {
+  DeveloperMember.findById(id).then((developerMember) => {
+    done(null, developerMember);
+  });
+});
+
 passport.use(
   new GoogleStrategy({
     // options for the google strategy
@@ -19,6 +29,7 @@ passport.use(
       if(currentDeveloperMember) {
         // ya existe el usuario
         console.log('El usuario ya existe: ', currentDeveloperMember);
+        done(null, currentDeveloperMember);
       } else {
         // si no existe el usuario se crea en la base de datos
         new DeveloperMember({
@@ -27,6 +38,7 @@ passport.use(
           _fullName: profile.displayName
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
+          done(null, newDeveloperMember);
         });
       }
     });
