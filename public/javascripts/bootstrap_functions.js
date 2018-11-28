@@ -2,5 +2,7 @@ $(document).ready(function () {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
-    $('#login, #signup').modal(options)
+    $('#show-modal').click(function (){
+        $('#add-project').modal('show')
+    });
 });
