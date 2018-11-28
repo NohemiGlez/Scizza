@@ -10,7 +10,7 @@ block content
                         br
                         br
                         img(src='/images/pusheen_pizza.jpg' class='open-input-file rounded-circle user-icon2 float-sm-left mr-5')
-                        p(class='presentation-text mt-5') Bienvenido #{username.fullName}
+                        p(class='presentation-text mt-5') Bienvenido
                     hr
                 br
                 div(class='col-sm-12 mt-4')
@@ -19,7 +19,7 @@ block content
                         div(class='row')
                             div(class='form-group col-sm-12')
                                 label(for='fullName') Nombre
-                                input(type='text' class='form-control' name='fullName' placeholder='@Juanito Alcachofa') 
+                                input(type='text' class='form-control' name='fullName' placeholder='@Juanito Alcachofa' value=`${username.fullName}`) 
                             div(class='form-group col-12 col-sm-6')
                                 label(for='birthdate') Fecha de nacimiento
                                 input(type='text' class='form-control' placeholder='1999-12-12' name='birthDate')
@@ -51,5 +51,5 @@ block content
                         input(type='hidden' class='btn btn-danger float-right' value='5bfe1e3d891887225d55ce73' name='facebook_provider_id')
                         input(type='hidden' class='btn btn-danger float-right' value='5bfe1e3d891887225d55ce73' name='twitter_provider_id')
                         input(type='hidden' class='btn btn-danger float-right' value='1' name='permission')
-                        input(type='hidden' class='btn btn-danger float-right' value='5bfe1e3d891887225d55ce73' name='google_provider_id')
+                        input(type='hidden' class='btn btn-danger float-right' value=`${username.google_provider_id}` name='google_provider_id')
                               
