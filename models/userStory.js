@@ -7,6 +7,7 @@ const Schema = mongoose.Schema,
 const schema = Schema({
     _id: ObjectId,
     _backlogId: String,
+    _name: String,
     _asRole: String,
     _want: String,
     _soThat: String,
@@ -17,11 +18,12 @@ const schema = Schema({
     _then: String
 });
 
-class Card{
+class UserStory{
 
-    constructor(id, backlogId, asRole, want, soThat, priority, size, given, when, then) {
+    constructor(id, backlogId, name, asRole, want, soThat, priority, size, given, when, then) {
         this._id = id;
         this._backlogId = backlogId;
+        this._name = name;
         this._asRole = asRole;
         this._want = want;
         this._soThat = soThat;
@@ -111,8 +113,16 @@ class Card{
     set then(value) {
         this._then = value;
     }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(value) {
+        this._name = value;
+    }
 }
 
 schema.plugin(mongoosePaginate);
-schema.loadClass(Card);
-module.exports = mongoose.model('Card', schema);
+schema.loadClass(UserStory);
+module.exports = mongoose.model('UserStory', schema);

@@ -1,5 +1,5 @@
 const express = require('express');
-const Card = require('../models/card');
+const UserStory = require('../models/userStory');
 const {validationResult} = require('express-validator/check');
 const ObjectID = require('mongodb').ObjectID;
 
@@ -12,9 +12,10 @@ function create(req, res, next) {
         });
     }
 
-    let card = new Card({
+    let userStory = new UserStory({
         _id : req.body.id ? req.body.id : new ObjectID(),
         _backlogId: req.body.backlogId,
+        _name: req.body.name,
         _asRole: req.body.asRole,
         _want: req.body.want,
         _soThat: req.body.soThat,
@@ -25,7 +26,7 @@ function create(req, res, next) {
         _then: req.body.then
     });
 
-    card.save()
+    userStory.save()
         .then((obj)=>{
             res.status(200).json({
                 errors: [],
@@ -46,13 +47,16 @@ function listAll(req, res, next) {
     let page = req.params.page ? req.params.page : 1;
     const options = {
         page: 1,
-        limit: 100,
-        select: '_backlogId _asRole _want _soThat _priority _size _given _when _then'
+        limit: 100
+        //select: '_backlogId _asRole _want _soThat _priority _size _given _when _then'
     }
 
-    Card.paginate({}, options)
+    UserStory.paginate({}, options)
         .then((objs)=>{
-            res.status(200).send(objs);
+            res.status(200).json({
+                errors:[],
+                data: objs
+            });
         }).catch((err)=>{
             res.status(500).json({
                 errors: [{message: 'Algo salio mal :c'}],
@@ -64,7 +68,7 @@ function listAll(req, res, next) {
 
 function listOne(req, res, next) {
 
-    Card.findById(req.params.id)
+    UserStory.findById(req.params.id)
         .then((obj)=>{
             res.status(200).json({
                 errors: [],
@@ -82,9 +86,10 @@ function listOne(req, res, next) {
 
 function update(req, res, next) {
 
-    Card.findById(req.params.id)
+    UserStory.findById(req.params.id)
         .then((obj)=>{
             obj.backlogId = req.body.backlogId ? req.body.backlogId : obj.backlogId;
+            obj.name      = req.body.name      ? req.body.name      : obj.name;
             obj.asRole    = req.body.asRole    ? req.body.asRole    : obj.asRole;
             obj.want      = req.body.want      ? req.body.want      : obj.want;
             obj.soThat    = req.body.soThat    ? req.body.soThat    : obj.soThat;
@@ -111,7 +116,7 @@ function update(req, res, next) {
 
 function destroy(req, res, next) {
 
-    Card.remove({_id: req.params.id})
+    UserStory.remove({_id: req.params.id})
         .then((obj)=>{
             res.status(200).json({
                 errors: [],
