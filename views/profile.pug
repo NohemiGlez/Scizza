@@ -16,7 +16,7 @@ block content
                 br
                 div(class='col-sm-12 mt-4')
                     p(class='presentation-text text-left') Datos personales
-                    form
+                    form(action='/developerMembers' method='PUT')
                         div(class='row')
                             div(class='form-group col-12 col-sm-6')
                                 label(for='birthdate') Fecha de nacimiento
@@ -30,20 +30,20 @@ block content
                             div(class='form-group col-12 col-sm-6')
                                 label(for='address') Domicilio
                                 input(type='text' class='form-control' placeholder='Calle Mozarella #5555' name='address')
-                div(class='col-sm-12 mt-3')
-                    p(class='presentation-text text-left') Cuéntanos, ¿en qué eres bueno?
-                    form
-                        div(class='row')
-                            div(class='form-group col-sm-6')
-                                label(for='skill') Habilidad de programación
-                                select(class='form-control')
-                                    option Java
-                                    option PHP
-                                    option Ruby
-                            div(class='form-group col-sm-6')
-                                label(for='level' class='') Nivel
-                                select(class='form-control')
-                                    option Senior
-                                    option Junior
+                        div(class='col-sm-12 mt-3')
+                            p(class='presentation-text text-left') Cuéntanos, ¿en qué eres bueno?
+                                div(class='row')
+                                    div(class='form-group col-sm-6')
+                                        label(for='skill') Habilidad de programación
+                                        select(class='form-control')
+                                            option Java
+                                            option PHP
+                                            option Ruby
+                                    div(class='form-group col-sm-6')
+                                        label(for='level' class='') Nivel
+                                        select(class='form-control')
+                                            option Senior
+                                            option Junior
             br
-            a(href='#' class='btn btn-danger float-right') Guardar perfil
+            input(type='submit' class='btn btn-danger float-right' value='Guardar perfil')
+            input(type='hidden' class='btn btn-danger float-right' value='5bfe1e3d891887225d55ce73' name='id')
