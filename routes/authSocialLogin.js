@@ -10,7 +10,8 @@ router.get('/google', passport.authenticate('google', {
 
 // Callback route for google
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-  res.send('Callback URI alcanzado');
+  // res.send(req.user);
+  res.redirect('/profile');
 });
 
 // Auth with facebook
