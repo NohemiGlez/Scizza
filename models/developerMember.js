@@ -9,8 +9,8 @@ const Schema = mongoose.Schema,
 
 const schema = Schema({
   _id: ObjectId,
-  _facebook_provider_id: String,
-  _twitter_provider_id: String,
+  _linkedin_provider_id: String,
+  _github_provider_id: String,
   _google_provider_id: String,
   _fullName: String,
   _birthDate: { type: Date },
@@ -23,11 +23,11 @@ const schema = Schema({
 });
 
 class DeveloperMember{
-  constructor(id, facebook_provider_id, twitter_provider_id,
+  constructor(id, linkedin_provider_id, github_provider_id,
   google_provider_id, fullName, birthDate, curp, rfc, address, team, role, permission){
     this._id = id;
-    this._facebook_provider_id = facebook_provider_id;
-    this._twitter_provider_id = twitter_provider_id;
+    this._linkedin_provider_id = linkedin_provider_id;
+    this._github_provider_id = github_provider_id;
     this._google_provider_id = google_provider_id;
     this._fullName = fullName;
     this._birthDate = birthDate;
@@ -47,20 +47,20 @@ class DeveloperMember{
     this._id = v;
   }
 
-  get facebook_provider_id(){
-    return this._facebook_provider_id;
+  get linkedin_provider_id(){
+    return this._linkedin_provider_id;
   }
 
-  set facebook_provider_id(v){
-    this._facebook_provider_id = v;
+  set linkedin_provider_id(v){
+    this._linkedin_provider_id = v;
   }
 
-  get twitter_provider_id(){
-    return this._twitter_provider_id;
+  get github_provider_id(){
+    return this._github_provider_id;
   }
 
-  set twitter_provider_id(v){
-    this._twitter_provider_id = v;
+  set github_provider_id(v){
+    this._github_provider_id = v;
   }
 
   get google_provider_id(){

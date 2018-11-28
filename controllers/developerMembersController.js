@@ -16,8 +16,8 @@ function create(req, res, next) {
 
   let developerMember = new DeveloperMember({
     _id: req.body.id ? req.body.id : new ObjectID(),
-    _facebook_provider_id: req.body.facebook_provider_id,
-    _twitter_provider_id: req.body.twitter_provider_id,
+    _linkedin_provider_id: req.body.linkedin_provider_id,
+    _github_provider_id: req.body.github_provider_id,
     _google_provider_id: req.body.google_provider_id,
     _fullName: req.body.fullName,
     _birthDate: req.body.birthDate,
@@ -53,7 +53,7 @@ function listAll(req, res, next) {
   const options = {
     page: 1,
     limit: 10,
-    select: '_facebook_provider_id _twitter_provider_id _google_provider_id _fullName _birthDate _curp _rfc _address _team _role _permission'
+    select: '_linkedin_provider_id _github_provider_id _google_provider_id _fullName _birthDate _curp _rfc _address _team _role _permission'
   }
 
   /*
@@ -100,8 +100,8 @@ function update(req, res, next) {
 
   DeveloperMember.findById(req.params.id)
   .then((obj)=>{
-    obj.facebook_provider_id = req.body.facebook_provider_id ? req.body.facebook_provider_id : obj.facebook_provider_id;
-    obj.twitter_provider_id = req.body.twitter_provider_id ? req.body.twitter_provider_id : obj.twitter_provider_id;
+    obj.linkedin_provider_id = req.body.linkedin_provider_id ? req.body.linkedin_provider_id : obj.linkedin_provider_id;
+    obj.github_provider_id = req.body.github_provider_id ? req.body.github_provider_id : obj.github_provider_id;
     obj.google_provider_id = req.body.google_provider_id ? req.body.google_provider_id : obj.google_provider_id;
     obj.fullName = req.body.fullName ? req.body.fullName : obj.fullName;
     obj.birthDate = req.body.birthDate ? req.body.birthDate : obj.birthDate;
