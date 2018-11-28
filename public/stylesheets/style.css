@@ -54,7 +54,10 @@ body, .white-background {
   font-size: 1.5rem !important;
 }
 .user-icon {
-  width: 50%;
+  width: 55%;
+}
+.user-icon2 {
+  width: 20%;
 }
 .user-icon:hover {
   filter:brightness(0.2);
