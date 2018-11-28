@@ -123,3 +123,9 @@ body, .white-background {
   transform: rotateY(180deg);
   z-index: 1;
 }
+
+.btn-corner {
+  position: fixed;
+  bottom: -4px;
+  right: 10px;
+}

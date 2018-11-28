@@ -27,5 +27,44 @@ block content
                                                 p(class="card-text") Scrum master
                                                 p(class='card-text') Product owner
                                                 a(href="project" class="btn btn-danger card-link mb-3") Ver detalles
+                div(class="d-flex align-items-end flex-column")
+                    a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar proyecto
+    div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+        div(class="modal-dialog bg-light col-sm-12" role="document")
+            div(class="modal-content")
+                form(action='/developerProject' method='POST')
+                    div(class="modal-header col-sm-12")
+                        h5(class="modal-title" id="exampleModalLabel") Agregar proyecto
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                    div(class="modal-body col-sm-12")
+                        div(class='form-group col-12 col-sm-12')
+                            label(for='projectName') Nombre
+                            input(type='text' class='form-control' name='projectName' placeholder='Proyecto DRAW') 
+                        div(class='form-group col-12 col-sm-6')
+                            label(for='projectRequestDate') Fecha de solcitud
+                            input(type='text' class='form-control' placeholder='1999-12-12' name='projectRequestDate')
+                        div(class='form-group col-12 col-sm-6')
+                            label(for='projectStartDate') Fecha de arranque
+                            input(type='text' class='form-control' placeholder='1999-12-12' name='projectStartDate')
+                        div(class='form-group col-12 col-sm-6')
+                            label(for='projectDescription') Descripción
+                            input(type='text' class='form-control' placeholder='Fabuloso proyecto' name='projectDescription')
+                        div(class='form-group col-12 col-sm-6')
+                            label(for='productOwner') Product owner
+                            input(type='text' class='form-control' placeholder='Juanito Alcachofa' name='productOwner')
+                        div(class='form-group col-sm-6')
+                            label(for='developerTeam') Equipo
+                                select(class='form-control' name='developerTeam')
+                                    option EquipoDRAW
+                                    option Equipo supremo
+                        div(class='form-group col-sm-6')
+                            label(for='projectManager') Líder del proyecto
+                                select(class='form-control' name='projectManager')
+                                    option Elmer Homero
+                                    option Pedrito Gómez
+            div(class="modal-footer")
+                button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
+                button(type="button" class="btn btn-danger") Agregar
+                    
                                     
 
