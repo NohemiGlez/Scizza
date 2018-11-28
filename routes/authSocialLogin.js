@@ -15,6 +15,15 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 });
 
 // Auth with facebook
+router.get('/facebook', passport.authenticate('facebook', {
+  scope: ['public_profile']
+}));
+
+// Callback route for facebook
+router.get('/facebook/redirect', passport.authenticate('facebook'), (req, res) => {
+  // res.send(req.user);
+  res.redirect('/profile');
+});
 
 // Auth with Twitter
 
