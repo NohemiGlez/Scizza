@@ -16,7 +16,7 @@ function create(req, res, next) {
     let sprint = new Sprint({
         _id: req.body.id ? req.body.id : new ObjectID(),
         _name: req.body.name,
-        _project: req.body._project
+        _project: req.body.project
     });
 
     sprint.save()
@@ -42,7 +42,7 @@ function listAll(req, res, next) {
     const options = {
         page: 1,
         limit: 10,
-        select: '_user _skill'
+        select: '_name _project'
     }
 
     //DeveloperMember.paginate({}, options)
