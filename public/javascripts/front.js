@@ -10,4 +10,5 @@ $(document).ready(function () {
     $('.open-input-file').click(function(){
         $('.file').show();
     });
+    document.querySelector(".card-flip").classList.toggle("flip");
 });
