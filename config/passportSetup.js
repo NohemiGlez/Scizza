@@ -49,11 +49,12 @@ passport.use(
 
 passport.use (
   new LinkedInStrategy({
-    callbackURL: 'http://localhost:3000/auth/linkedin/redirect',
+    callbackURL: 'auth/linkedin/redirect',
     clientID: keys.linkedin.clientID,
     clientSecret: keys.linkedin.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
     // comprobar si ya existe el usuario
+    console.log(profile);
     DeveloperMember.findOne({
       _linkedin_provider_id: profile.id
     }).then((currentDeveloperMember) => {
@@ -66,7 +67,7 @@ passport.use (
         new DeveloperMember({
           _id: new ObjectID(),
           _linkedin_provider_id: profile.id,
-          //_fullName: profile.displayName
+          _fullName: profile.firstName + profile.lastName
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
@@ -82,6 +83,7 @@ passport.use(
     clientID: keys.github.clientID,
     clientSecret: keys.github.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
+    console.log(profile);
     DeveloperMember.findOne({
       _github_provider_id: profile.id
     }).then((currentDeveloperMember) => {
@@ -91,7 +93,8 @@ passport.use(
       } else {
         new DeveloperMember({
           _id: new ObjectID(),
-          _github_provider_id: profile.id
+          _github_provider_id: profile.id,
+          _fullName: profile.name
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
