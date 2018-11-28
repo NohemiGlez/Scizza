@@ -10,13 +10,16 @@ block content
                         br
                         br
                         img(src='/images/pusheen_pizza.jpg' class='open-input-file rounded-circle user-icon2 float-sm-left mr-5')
-                        input(type='text' class='presentation-text mt-5' name='fullName' placeholder='@Juanito Alcachofa') 
+                        p(class='presentation-text mt-5') Nombre de usuario
                     hr
                 br
                 div(class='col-sm-12 mt-4')
                     p(class='presentation-text text-left') Datos personales
                     form(action='/developerMembers' method='POST')
                         div(class='row')
+                            div(class='form-group col-sm-12')
+                                label(for='fullName') Nombre
+                                input(type='text' class='form-control' name='fullName' placeholder='@Juanito Alcachofa') 
                             div(class='form-group col-12 col-sm-6')
                                 label(for='birthdate') Fecha de nacimiento
                                 input(type='text' class='form-control' placeholder='1999-12-12' name='birthDate')
@@ -33,13 +36,13 @@ block content
                             p(class='presentation-text text-left') ¿Cómo ayudas a tu equipo?
                                 div(class='row')
                                     div(class='form-group col-sm-6')
-                                        label(for='team' class='') Equipo
-                                        select(class='form-control')
+                                        label(for='team') Equipo
+                                        select(class='form-control' name='team')
                                             option EquipoDRAW
                                             option Equipo supremo
                                     div(class='form-group col-sm-6')
-                                        label(for='role' class='') Rol
-                                        select(class='form-control')
+                                        label(for='role') Rol
+                                        select(class='form-control' name='role')
                                             option Project manager
                                             option Backend
                                             option Frontend
