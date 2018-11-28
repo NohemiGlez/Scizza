@@ -14,13 +14,13 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
   res.redirect('/profile');
 });
 
-// Auth with facebook
-router.get('/facebook', passport.authenticate('facebook', {
-  scope: ['public_profile']
+// Auth with linkedin
+router.get('/linkedin', passport.authenticate('linkedin', {
+  scope: ['r_emailaddress', 'r_basicprofile']
 }));
 
 // Callback route for facebook
-router.get('/facebook/redirect', passport.authenticate('facebook'), (req, res) => {
+router.get('/linkedin/redirect', passport.authenticate('linkedin'), (req, res) => {
   // res.send(req.user);
   res.redirect('/profile');
 });
@@ -35,7 +35,5 @@ router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
   // res.send(req.user);
   res.redirect('/profile');
 });
-
-// Auth with Twitter
 
 module.exports = router;

@@ -48,8 +48,8 @@ block content
                                             option Frontend
                         br
                         input(type='submit' class='btn btn-danger float-right' value='Guardar perfil')
-                        input(type='hidden' class='btn btn-danger float-right' value='5bfe1e3d891887225d55ce73' name='facebook_provider_id')
-                        input(type='hidden' class='btn btn-danger float-right' value='5bfe1e3d891887225d55ce73' name='twitter_provider_id')
+                        input(type='hidden' class='btn btn-danger float-right' value=`${username.github_provider_id}` name='github_provider_id')
+                        input(type='hidden' class='btn btn-danger float-right' value=`${username.linkedin_provider_id}` name='linkedin_provider_id')
                         input(type='hidden' class='btn btn-danger float-right' value='1' name='permission')
                         input(type='hidden' class='btn btn-danger float-right' value=`${username.google_provider_id}` name='google_provider_id')
                               
