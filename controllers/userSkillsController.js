@@ -16,7 +16,8 @@ function create(req, res, next) {
   let userSkill = new UserSkill({
     _id: req.body.id ? req.body.id : new ObjectID(),
     _user: req.body.user,
-    _skill: req.body.skill
+    _skill: req.body.skill,
+    _level: req.body.level
   });
 
   userSkill.save()
@@ -85,6 +86,7 @@ function update(req, res, next) {
   .then((obj)=>{
     obj.user = req.body.user ? req.body.user : obj.user;
     obj.skill = req.body.skill ? req.body.skill : obj.skill;
+    obj.level = req.body.level ? req.body.level : obj.level;
     obj.save()
     .then((obj)=>{
       res.status(200).json({

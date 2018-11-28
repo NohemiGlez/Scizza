@@ -8,14 +8,16 @@ const Schema = mongoose.Schema,
 const schema = Schema({
   _id: ObjectId,
   _user: { type: ObjectId, ref: 'DeveloperMember' },
-  _skill: String
+  _skill: String,
+  _level: String
 });
 
 class UserSkill{
-  constructor(id, user, skill){
+  constructor(id, user, skill, level){
     this._id = id;
     this._user = user;
     this._skill = skill;
+    this._level = level;
   }
 
   get id(){
@@ -40,6 +42,14 @@ class UserSkill{
 
   set skill(v){
     this._skill = v;
+  }
+
+  get level(){
+    return this._level;
+  }
+
+  set level(v){
+    this._level = v;
   }
 
 }
