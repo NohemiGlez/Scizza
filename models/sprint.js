@@ -9,14 +9,16 @@ const Schema = mongoose.Schema,
 const schema = Schema({
     _id: ObjectId,
     _name: String,
+    _type: String,
     _project: { type: ObjectId, ref: 'Project'}
 });
 
 class Sprint{
 
-    constructor(id, name, project) {
+    constructor(id, name, type, project) {
         this._id = id;
         this._name = name;
+        this._type = type;
         this._project = project;
     }
 
@@ -42,6 +44,14 @@ class Sprint{
 
     set project(value) {
         this._project = value;
+    }
+
+    get type() {
+        return this._type;
+    }
+
+    set type(value) {
+        this._type = value;
     }
 }
 

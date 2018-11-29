@@ -16,6 +16,7 @@ function create(req, res, next) {
     let sprint = new Sprint({
         _id: req.body.id ? req.body.id : new ObjectID(),
         _name: req.body.name,
+        _type: req.body.type,
         _project: req.body.project
     });
 
@@ -84,6 +85,7 @@ function update(req, res, next) {
     Sprint.findById(req.params.id)
         .then((obj)=>{
             obj.name = req.body.name ? req.body.name : obj.name;
+            obj.type = req.body.type ? req.body.type : obj.type;
             obj.project = req.body.project ? req.body.project : obj.project;
             obj.save()
                 .then((obj)=>{
