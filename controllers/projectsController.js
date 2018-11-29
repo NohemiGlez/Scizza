@@ -73,9 +73,9 @@ function listAll(req, res, next) {
       });
     });
     */
-    Project.find(function (err, docs1) {
+    Project.find(function (err, docs) {
             res.render('projects', {
-                firstlist : docs1,
+                projects : docs,
                 title: 'Scizza | Proyectos',
                 username: 'Scizzonio Peperoni',
                 principalSkill: 'Desarrollador Web'
