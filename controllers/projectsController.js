@@ -1,5 +1,6 @@
 const express = require('express');
 const Project = require('../models/project');
+const helpers = require('./helpers/createProjectBoard');
 //const DeveloperMember = require('../models/developerMember');
 //const DeveloperTeam = require('../models/developerTeam');
 const {validationResult} = require('express-validator/check');
@@ -38,6 +39,7 @@ function create(req, res, next) {
       });
     });
 
+  helpers.createProjectBoard(project.id());
 }
 
 function listAll(req, res, next) {
