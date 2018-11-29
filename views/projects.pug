@@ -30,8 +30,6 @@ block content
                 div(class="d-flex align-items-end flex-column")
                     a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar proyecto
     div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
-        each project in projects.docs
-          p #{project.projectName} 
         div(class="modal-dialog bg-light col-sm-12" role="document")
             form(action='/Projects' method='POST')
                 div(class="modal-content")
