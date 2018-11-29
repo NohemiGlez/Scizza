@@ -4,9 +4,9 @@ const projectsController = require('../controllers/projectsController');
 
 router.post('/', projectsController.create);
 
-router.get('/', function (req, res, next) {
-    res.render('projects', { title: 'Scizza | Proyectos', username: 'Scizzonio Peperoni', principalSkill: 'Desarrollador Web' });
-});
+//router.get('/', function (req, res, next) {
+//    res.render('projects', { title: 'Scizza | Proyectos', username: 'Scizzonio Peperoni', principalSkill: 'Desarrollador Web' });
+//});
 
 router.get('/get', projectsController.listAll);
 

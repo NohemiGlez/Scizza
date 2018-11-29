@@ -32,11 +32,11 @@ function create(req, res, next) {
 
   developerMember.save()
     .then((obj)=>{
-      res.status(200).json({
-        errors: [],
-        data: obj
-      });
-      //res.redirect('/developerMembers/get');
+      //res.status(200).json({
+      //  errors: [],
+      //  data: obj
+      //});
+      res.redirect('projects/get');
     })
     .catch((err)=>{
       return res.status(500).json({
