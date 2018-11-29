@@ -22,11 +22,7 @@ function create(req, res, next) {
 
   userSkill.save()
     .then((obj)=>{
-      res.status(200).json({
-        errors: [],
-        data: obj
-      });
-      //res.redirect('/developerMembers/get');
+      res.redirect('/userSkills/get');
     })
     .catch((err)=>{
       return res.status(500).json({
@@ -43,14 +39,18 @@ function listAll(req, res, next) {
   const options = {
     page: 1,
     limit: 10,
-    select: '_user _skill'
+    select: '_user _skill _level'
   }
 
   //DeveloperMember.paginate({}, options)
     UserSkill.find({}, (err, userSkills)=>{
       DeveloperMember.populate(userSkills, {path: "_user"}, (err, userSkills)=>{
-        res.status(200).send(userSkills);
-        // Aqui devuelve el json con json.
+        res.render('userSkills', {
+            userSkills : userSkills,
+            title: 'Scizza | Proyectos',
+            username: 'Scizzonio Peperoni',
+            principalSkill: 'Desarrollador Web'
+          });
       });
 
     }).catch((err)=>{

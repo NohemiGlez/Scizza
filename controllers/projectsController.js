@@ -62,10 +62,11 @@ function listAll(req, res, next) {
       });
     */
 
-    Project.paginate({}, options)
-    .then((objs)=>{
+    //Project.paginate({}, options)
+    //.then((objs)=>{
+    Project.find({}, (err, projects)=>{
       res.render('projects', {
-          projects : objs,
+          projects : projects,
           title: 'Scizza | Proyectos',
           username: 'Scizzonio Peperoni',
           principalSkill: 'Desarrollador Web'
