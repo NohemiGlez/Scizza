@@ -28,31 +28,31 @@ block content
                                                 p(class="card-text") #{project.projectManager}
                                                 p(class='card-text') #{project.productOwner}
                                                 a(href="project" class="btn btn-danger card-link mb-3") Ver detalles
-                        div(class="d-flex align-items-end flex-column")
-                          a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar proyecto
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
-                          br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                      div(class="d-flex align-items-end flex-column")
+                        a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar proyecto      
     div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
         div(class="modal-dialog bg-light col-sm-12" role="document")
             form(action='/Projects' method='POST')
@@ -86,7 +86,6 @@ block content
                                 select(class='form-control' name='projectManager')
                                     option Elmer Homero
                                     option Pedrito Gómez
-                                    option #{title}
                         div(class="modal-footer")
                             
                             button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
