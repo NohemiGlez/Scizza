@@ -16,12 +16,13 @@ const schema = Schema({
     _timeUnit: String,
     _given: String,
     _when: String,
-    _then: String
+    _then: String,
+    _remainingTime: Number,
 });
 
 class UserStory{
 
-    constructor(id, backlogId, name, asRole, want, soThat, priority, size, timeUnit, given, when, then) {
+    constructor(id, backlogId, name, asRole, want, soThat, priority, size, timeUnit, given, when, then, remainingTime) {
         this._id = id;
         this._backlogId = backlogId;
         this._name = name;
@@ -34,6 +35,7 @@ class UserStory{
         this._given = given;
         this._when = when;
         this._then = then;
+        this._remainingTime = remainingTime;
     }
 
     get id() {
@@ -130,6 +132,14 @@ class UserStory{
 
     set timeUnit(value) {
         this._timeUnit = value;
+    }
+
+    get remainingTime() {
+        return this._remainingTime;
+    }
+
+    set remainingTime(value) {
+        this._remainingTime = value;
     }
 }
 

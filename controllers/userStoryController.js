@@ -24,7 +24,8 @@ function create(req, res, next) {
         _timeUnit: req.body.timeUnit,
         _given: req.body.given,
         _when: req.body.when,
-        _then: req.body.then
+        _then: req.body.then,
+        _remainingTime: req.body.remainingTime
     });
 
     userStory.save()
@@ -90,16 +91,17 @@ function update(req, res, next) {
     UserStory.findById(req.params.id)
         .then((obj)=>{
             obj.backlogId = req.body.backlogId ? req.body.backlogId : obj.backlogId;
-            obj.name      = req.body.name      ? req.body.name      : obj.name;
-            obj.asRole    = req.body.asRole    ? req.body.asRole    : obj.asRole;
-            obj.want      = req.body.want      ? req.body.want      : obj.want;
-            obj.soThat    = req.body.soThat    ? req.body.soThat    : obj.soThat;
-            obj.priority  = req.body.priority  ? req.body.priority  : obj.priority;
-            obj.size      = req.body.size      ? req.body.size      : obj.size;
-            obj.timeUnit  = req.body.timeUnit  ? req.body.timeUnit  : obj.timeUnit;
-            obj.given     = req.body.given     ? req.body.given     : obj.given;
-            obj.when      = req.body.when      ? req.body.when      : obj.when;
-            obj.then      = req.body.then      ? req.body.then      : obj.then;
+            obj.name = req.body.name ? req.body.name : obj.name;
+            obj.asRole  = req.body.asRole ? req.body.asRole : obj.asRole;
+            obj.want = req.body.want ? req.body.want : obj.want;
+            obj.soThat  = req.body.soThat ? req.body.soThat : obj.soThat;
+            obj.priority = req.body.priority ? req.body.priority : obj.priority;
+            obj.size  = req.body.size ? req.body.size : obj.size;
+            obj.timeUnit = req.body.timeUnit ? req.body.timeUnit : obj.timeUnit;
+            obj.given = req.body.given ? req.body.given : obj.given;
+            obj.when = req.body.when ? req.body.when : obj.when;
+            obj.then = req.body.then ? req.body.then : obj.then;
+            obj.remainingTime = req.body.remainingTime ? req.body.remainingTime : obj.remainingTime;
             obj.save()
                 .then((obj)=>{
                     res.status(200).json({
