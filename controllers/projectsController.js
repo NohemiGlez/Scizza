@@ -39,7 +39,7 @@ function create(req, res, next) {
       });
     });
 
-  helpers.createProjectBoard(project.id());
+  helpers.createProjectBoard(project.id);
 }
 
 function listAll(req, res, next) {
