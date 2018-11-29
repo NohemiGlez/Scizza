@@ -6,6 +6,7 @@ block content
             section
                 div(class='container')
                     div(class='row mt-5')
+                      each project in projects.docs
                         div(class='col-sm-6 col-lg-4 mt-5')
                             div(class='card-flip')
                                 div(class='flip')
@@ -62,8 +63,11 @@ block content
                                 select(class='form-control' name='projectManager')
                                     option Elmer Homero
                                     option Pedrito Gómez
+                                    option #{title}
                         div(class="modal-footer")
+                            
                             button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
                             input(type='submit' class='btn btn-danger' value='Agregar')
+                            
                     
                                     

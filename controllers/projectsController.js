@@ -41,14 +41,14 @@ function create(req, res, next) {
 }
 
 function listAll(req, res, next) {
-/*
+
   let page = req.params.page ? req.params.page : 1;
   const options = {
     page: 1,
-    limit: 10,
+    limit: 30,
     select: '_projectName _projectRequestDate _projectStartDate _projectDescription _projectManager _productOwner _developerTeam'
   }
-*/
+
 
   /*
     Project.find({}, (err, projects)=>{
@@ -61,10 +61,15 @@ function listAll(req, res, next) {
         // Aqui devuelve el json con jsons
       });
     */
-    /*
+
     Project.paginate({}, options)
     .then((objs)=>{
-      res.render('projects',{projects:objs});
+      res.render('projects', {
+          projects : objs,
+          title: 'Scizza | Proyectos',
+          username: 'Scizzonio Peperoni',
+          principalSkill: 'Desarrollador Web'
+        });
       //res.status(200).send(objs);
     }).catch((err)=>{
       res.status(500).json({
@@ -72,16 +77,16 @@ function listAll(req, res, next) {
         data: []
       });
     });
-    */
+    /*
     Project.find(function (err, docs) {
             res.render('projects', {
-                projects : docs,
+                projects : objs,
                 title: 'Scizza | Proyectos',
                 username: 'Scizzonio Peperoni',
                 principalSkill: 'Desarrollador Web'
               });
     });
-
+*/
 }
 
 function listOne(req, res, next) {
