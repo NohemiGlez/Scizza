@@ -6,6 +6,8 @@ const keys = require('./keys');
 const DeveloperMember = require('../models/developerMember');
 const ObjectID = require('mongodb').ObjectID;
 
+var usuarioExistente;
+
 passport.serializeUser((developerMember, done) => {
   done(null, developerMember.id);
 });
@@ -31,6 +33,7 @@ passport.use(
       if(currentDeveloperMember) {
         // ya existe el usuario
         console.log('El usuario ya existe: ', currentDeveloperMember);
+        module.exports.usuarioExistente = true;
         done(null, currentDeveloperMember);
       } else {
         // si no existe el usuario se crea en la base de datos
@@ -40,6 +43,7 @@ passport.use(
           _fullName: profile.displayName
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
+          module.exports.usuarioExistente = false;
           done(null, newDeveloperMember);
         });
       }

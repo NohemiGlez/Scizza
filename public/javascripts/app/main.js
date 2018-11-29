@@ -2,7 +2,7 @@ const app = new Vue({
     el:'#app',
     data:{
         // Objetos que contengan información de la app (modelos)
-        users: [ 
+        users: [
         ],
         user:{
             name: 'Luis',
@@ -27,9 +27,9 @@ const app = new Vue({
         result(){
             return this.operators.n1 + this.operators.n2;
         }
-        // Funciones que podrán ser 
+        // Funciones que podrán ser
         // desplegables en las vistas sólo si regresan un resultado.
-        
+
     },
     created(){
         // Aquí se ejecuta código al inicializar la aplicación.
