@@ -13,6 +13,7 @@ const schema = Schema({
     _soThat: String,
     _priority: Number,
     _size: Number,
+    _timeUnit: String,
     _given: String,
     _when: String,
     _then: String
@@ -20,7 +21,7 @@ const schema = Schema({
 
 class UserStory{
 
-    constructor(id, backlogId, name, asRole, want, soThat, priority, size, given, when, then) {
+    constructor(id, backlogId, name, asRole, want, soThat, priority, size, timeUnit, given, when, then) {
         this._id = id;
         this._backlogId = backlogId;
         this._name = name;
@@ -29,6 +30,7 @@ class UserStory{
         this._soThat = soThat;
         this._priority = priority;
         this._size = size;
+        this._timeUnit = timeUnit;
         this._given = given;
         this._when = when;
         this._then = then;
@@ -120,6 +122,14 @@ class UserStory{
 
     set name(value) {
         this._name = value;
+    }
+
+    get timeUnit() {
+        return this._timeUnit;
+    }
+
+    set timeUnit(value) {
+        this._timeUnit = value;
     }
 }
 

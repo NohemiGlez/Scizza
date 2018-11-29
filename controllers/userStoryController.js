@@ -21,6 +21,7 @@ function create(req, res, next) {
         _soThat: req.body.soThat,
         _priority: req.body.priority,
         _size: req.body.size,
+        _timeUnit: req.body.timeUnit,
         _given: req.body.given,
         _when: req.body.when,
         _then: req.body.then
@@ -95,6 +96,7 @@ function update(req, res, next) {
             obj.soThat    = req.body.soThat    ? req.body.soThat    : obj.soThat;
             obj.priority  = req.body.priority  ? req.body.priority  : obj.priority;
             obj.size      = req.body.size      ? req.body.size      : obj.size;
+            obj.timeUnit  = req.body.timeUnit  ? req.body.timeUnit  : obj.timeUnit;
             obj.given     = req.body.given     ? req.body.given     : obj.given;
             obj.when      = req.body.when      ? req.body.when      : obj.when;
             obj.then      = req.body.then      ? req.body.then      : obj.then;
