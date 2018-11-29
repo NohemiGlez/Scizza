@@ -38,12 +38,19 @@ function listAll(req, res, next) {
     limit: 10,
     select: '_teamName'
   }
-
+/*
   DeveloperTeam.paginate({}, options)
     .then((objs)=>{
       res.render('developerTeams/listAll',{developerTeams:objs});
-    })
-    .catch((err)=>{
+*/
+    DeveloperTeam.find({}, (err, developerTeams)=>{
+      res.render('developerTeams', {
+        developerTeams : developerTeams,
+        title: 'Scizza | Proyectos',
+        username: 'Scizzonio Peperoni',
+        principalSkill: 'Desarrollador Web'
+      });
+    }).catch((err)=>{
     res.status(500).json({
       errors: [{message: 'Algo salió mal :c'}],
       data: []
