@@ -11,7 +11,7 @@ block content
                                 div(class='flip')
                                     div(class='front')
                                         div(class='card shadow-sm p-3 mb-5 bg-white rounded')
-                                            img(class="card-img-top" src="images/team_pizza.jpg" alt="100%x180" style="height: 180px; width: 100%; display: block;" data-holder-rendered="true")
+                                            img(class="card-img-top" src="../images/team_pizza.jpg" alt="100%x180" style="height: 180px; width: 100%; display: block;" data-holder-rendered="true")
                                             div(class="card-block")
                                                 h4(class="card-title mt-3") Proyecto DRAW
                                                 p(class='card-text') Equipo desarrollo
@@ -31,7 +31,7 @@ block content
                     a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar proyecto
     div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
         div(class="modal-dialog bg-light col-sm-12" role="document")
-            form(action='/developerProject' method='POST')
+            form(action='/Projects' method='POST')
                 div(class="modal-content")
                     div(class="modal-header col-sm-12")
                         h5(class="modal-title" id="exampleModalLabel") Agregar proyecto
@@ -62,9 +62,8 @@ block content
                                 select(class='form-control' name='projectManager')
                                     option Elmer Homero
                                     option Pedrito Gómez
-                div(class="modal-footer")
-                    button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
-                    input(type='submit' class='btn btn-danger' value='Agregar')
+                        div(class="modal-footer")
+                            button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
+                            input(type='submit' class='btn btn-danger' value='Agregar')
                     
                                     
-

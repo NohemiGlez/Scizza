@@ -28,10 +28,7 @@ function create(req, res, next) {
 
   project.save()
     .then((obj)=>{
-      res.status(200).json({
-        errors: [],
-        data: obj
-      });
+      res.redirect("/projects/get");
       //res.redirect('/developerMembers/get');
     })
     .catch((err)=>{
@@ -44,14 +41,14 @@ function create(req, res, next) {
 }
 
 function listAll(req, res, next) {
-
+/*
   let page = req.params.page ? req.params.page : 1;
   const options = {
     page: 1,
     limit: 10,
     select: '_projectName _projectRequestDate _projectStartDate _projectDescription _projectManager _productOwner _developerTeam'
   }
-
+*/
 
   /*
     Project.find({}, (err, projects)=>{
@@ -64,15 +61,25 @@ function listAll(req, res, next) {
         // Aqui devuelve el json con jsons
       });
     */
+    /*
     Project.paginate({}, options)
     .then((objs)=>{
-      //res.render('projects/listAll',{projects:objs});
-      res.status(200).send(objs);
+      res.render('projects',{projects:objs});
+      //res.status(200).send(objs);
     }).catch((err)=>{
       res.status(500).json({
         errors: [{message: 'Algo salió mal :c'}],
         data: []
       });
+    });
+    */
+    Project.find(function (err, docs1) {
+            res.render('projects', {
+                firstlist : docs1,
+                title: 'Scizza | Proyectos',
+                username: 'Scizzonio Peperoni',
+                principalSkill: 'Desarrollador Web'
+              });
     });
 
 }
