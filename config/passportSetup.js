@@ -107,13 +107,14 @@ passport.use(
     }).then((currentDeveloperMember) => {
       if(currentDeveloperMember) {
         console.log('El usuario ya existe: ', currentDeveloperMember);
+        console.log(profile);
         module.exports.usuarioExistente = true;
         done(null, currentDeveloperMember);
       } else {
         new DeveloperMember({
           _id: new ObjectID(),
           _github_provider_id: profile.id,
-          _fullName: " ",
+          _fullName: profile.displayName,
           _curp: " ",
           _rfc: " ",
           _address: " ",
