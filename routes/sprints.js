@@ -4,6 +4,8 @@ const sprintsController = require('../controllers/sprintsController');
 
 router.post('/', sprintsController.create);
 
+//router.get('/', sprintsController.sprints);
+
 router.get('/get', sprintsController.listAll);
 
 router.get('/show/:id?', sprintsController.listOne);

@@ -127,7 +127,11 @@ function destroy(req, res, next) {
         });
 
 }
-
+/*
+function sprints(req, res, next){
+    //Sprint.find({_project: req.user.})
+}
+*/
 module.exports = {
     create,
     listOne,
