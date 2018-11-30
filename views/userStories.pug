@@ -1,8 +1,8 @@
 extends dashboard_base
 
 block content
-    a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-userStory") Agregar historia de usuario
-    div(class="modal fade" id="add-userStory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar habilidad
+    div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
         div(class="modal-dialog bg-light col-sm-12" role="document")
             form(action='/userStory' method='POST')
                 div(class="modal-content")
