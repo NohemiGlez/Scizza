@@ -1,5 +1,6 @@
 const express = require('express');
 const Project = require('../models/project');
+const DeveloperTeam = require('../models/developerTeam');
 const helpers = require('./helpers/createProjectBoard');
 //const DeveloperMember = require('../models/developerMember');
 //const DeveloperTeam = require('../models/developerTeam');
@@ -67,11 +68,14 @@ function listAll(req, res, next) {
     //Project.paginate({}, options)
     //.then((objs)=>{
     Project.find({ _developerTeam : req.user.team }, (err, projects)=>{
-      res.render('projects', {
-          projects : projects,
-          title: 'Scizza | Proyectos',
-          username: req.user,
-          principalSkill: 'Desarrollador Web'
+      DeveloperTeam.find({}, (err, developerTeams)=>{
+        res.render('projects', {
+            projects : projects,
+            developerTeams : developerTeams,
+            title: 'Scizza | Proyectos',
+            username: req.user,
+            principalSkill: 'Desarrollador Web'
+          });
         });
       //res.status(200).send(objs);
     }).catch((err)=>{
