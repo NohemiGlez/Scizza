@@ -25,7 +25,7 @@ passport.use(
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
 
-  }, (accessToken, refreshToken, profile, userInfo, done) => {
+  }, (accessToken, refreshToken, profile, done) => {
     // comprobar si ya existe el usuario
     DeveloperMember.findOne({
       _google_provider_id: profile.id
@@ -37,12 +37,10 @@ passport.use(
         done(null, currentDeveloperMember);
       } else {
         // si no existe el usuario se crea en la base de datos
-        console.log(profile.scope[1]);
         new DeveloperMember({
           _id: new ObjectID(),
           _google_provider_id: profile.id,
           _fullName: profile.displayName,
-          _birthDate: "1997-01-07",
           _curp: " ",
           _rfc: " ",
           _address: " ",
@@ -80,7 +78,6 @@ passport.use (
           _id: new ObjectID(),
           _linkedin_provider_id: profile.id,
           _fullName: " ",
-          _birthDate: "1997-01-07",
           _curp: " ",
           _rfc: " ",
           _address: " ",
@@ -114,7 +111,6 @@ passport.use(
           _id: new ObjectID(),
           _github_provider_id: profile.id,
           _fullName: " ",
-          _birthDate: "1997-01-07",
           _curp: " ",
           _rfc: " ",
           _address: " ",
