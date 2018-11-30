@@ -139,7 +139,9 @@ function sprints(req, res, next){
 
     Sprint.find({_project : project }, (err, sprints)=>{
         res.render('sprints', {
-            sprints : sprints
+            sprints : sprints,
+            title: 'Scizza | Tablero',
+            username: req.user,
         });
         //res.status(200).send(objs);
     }).catch((err)=>{
