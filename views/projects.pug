@@ -84,8 +84,8 @@ block content
                         div(class='form-group col-sm-6')
                             label(for='projectManager') Líder del proyecto
                                 select(class='form-control' name='projectManager')
-                                    option Elmer Homero
-                                    option Pedrito Gómez
+                                  each developerMember in developerMembers
+                                    option #{developerMember.fullName}
                         div(class="modal-footer")
                             
                             button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
