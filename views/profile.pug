@@ -41,8 +41,8 @@ block content
                                     div(class='form-group col-sm-6')
                                         label(for='team') Equipo
                                         select(class='form-control' name='team')
-                                            option EquipoDRAW
-                                            option Equipo supremo
+                                          each developerTeam in developerTeams
+                                            option #{developerTeam.teamName}
                                     div(class='form-group col-sm-6')
                                         label(for='role') Rol
                                         select(class='form-control' name='role')

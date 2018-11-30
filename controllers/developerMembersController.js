@@ -1,6 +1,7 @@
 const passport = require('passport');
 const express = require('express');
 const DeveloperMember = require('../models/developerMember');
+const DeveloperTeam = require('../models/developerTeam');
 //const DeveloperTeam = require('../models/developerTeam');
 //const Role = require('../models/role');
 const {validationResult} = require('express-validator/check');
@@ -84,16 +85,20 @@ function listAll(req, res, next) {
         // Aqui devuelve el json con jsons
       });
 */
-    DeveloperMember.paginate({}, options)
-    .then((objs)=>{
-      //res.render('developerMembers/listAll',{developerMembers:objs});
-      res.status(200).send(objs);
-    }).catch((err)=>{
-      res.status(500).json({
-        errors: [{message: 'Algo salió mal :c'}],
-        data: []
-      });
+DeveloperTeam.find({}, (err, developerTeams)=>{
+  res.render('profile', {
+      developerTeams : developerTeams,
+      title: 'Scizza | Proyectos',
+      username: req.user,
+      principalSkill: 'Desarrollador Web'
     });
+  //res.status(200).send(objs);
+}).catch((err)=>{
+  res.status(500).json({
+    errors: [{message: 'Algo salió mal :c'}],
+    data: []
+  });
+});
 
 }
 

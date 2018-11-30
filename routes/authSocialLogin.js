@@ -16,7 +16,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
   if(passportSetup.usuarioExistente) {
     res.redirect('/projects/get');
   } else {
-    res.redirect('/profile');
+    res.redirect('/developerMembers/get');
   }
 
 });
@@ -32,7 +32,7 @@ router.get('/linkedin/redirect', passport.authenticate('linkedin'), (req, res) =
   if(passportSetup.usuarioExistente) {
     res.redirect('/projects/get');
   } else {
-    res.redirect('/profile');
+    res.redirect('/developerMembers/get');
   }
 });
 
@@ -47,7 +47,7 @@ router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
   if(passportSetup.usuarioExistente) {
     res.redirect('/projects/get');
   } else {
-    res.redirect('/profile');
+    res.redirect('/developerMembers/get');;
   }
 });
 
