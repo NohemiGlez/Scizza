@@ -23,6 +23,7 @@ const developerTeamsRouter = require('./routes/developerTeams');
 const userSkillsRouter = require('./routes/userSkills');
 const userStoriesRouter = require('./routes/userStories');
 const sprintsRouter = require('./routes/sprints');
+const rolesRouter = require('./routes/roles');
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.use('/developerTeams', developerTeamsRouter);
 app.use('/userSkills', userSkillsRouter);
 app.use('/userStories', userStoriesRouter);
 app.use('/sprints', sprintsRouter);
+app.use('/roles', rolesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
