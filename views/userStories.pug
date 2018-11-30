@@ -1,7 +1,57 @@
 extends dashboard_base
 
 block content
-    a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar habilidad
+    div(class='col-sm-12')
+        div(class='col-sm-9 offset-sm-3')
+            section
+                div(class='container')
+                    div(class='row mt-10')
+                        div(class='col-sm-6 col-lg-4 mt-5')
+                            div(class='card-flip')
+                                div(class='flip')
+                                    div(class='front')
+                                        div(class='card shadow-sm p-3 mb-5 bg-white rounded')
+                                            div(class="card-block")
+                                                h4(class="card-title mt-3") Narrativa de la historia
+                                                p(class='card-text') Como:
+                                                p(class='card-text') Quiero: 
+                                                p(class='card-text') De tal manera: 
+                                                p 
+                                                    small Prioridad:
+                                                p 
+                                                    small Tamaño:
+                                    div(class="back")
+                                        div(class="card shadow-sm p-3 mb-5 bg-white rounded")
+                                            div(class="card-block")
+                                                h4(class="card-title mt-3") Criterios de aceptación
+                                                p(class="card-text") Dado:
+                                                p(class="card-text") Cuando:
+                                                p(class='card-text') Entonces:
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                                    br
+                    div(class="d-flex align-items-end flex-column")
+                        a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar historia de usuario
     div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
         div(class="modal-dialog bg-light col-sm-12" role="document")
             form(action='/userStory' method='POST')
@@ -10,10 +60,10 @@ block content
                         h5(class="modal-title" id="exampleModalLabel") Agregar una historia de usuario
                         button(type="button" class="close" data-dismiss="modal" aria-label="Close")
                     div(class="modal-body col-sm-12")
-                        div(class='form-group col-12 col-sm-12')
-                            label(for='backlogId') TEMPORAL NECESITO JALAR EL ID DEL PROYECTO
+                        div(class='form-group col-12 col-sm-4')
+                            label(for='backlogId') No. Proyecto
                             input(type='text' class='form-control' name='backlogId' placeholder='????')
-                        div(class='form-group col-sm-6')
+                        div(class='form-group col-12 col-sm-4')
                             label(for='size') Tiempo
                                 select(class='form-control' name='size')
                                     option 1
@@ -23,7 +73,7 @@ block content
                                     option 8
                                     option 13
                                     option 21
-                        div(class='form-group col-sm-6')
+                        div(class='form-group col-12 col-sm-4')
                             label(for='priority') Prioridad
                                 select(class='form-control' name='priority')
                                     option 1
