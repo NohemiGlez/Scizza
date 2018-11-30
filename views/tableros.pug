@@ -7,15 +7,15 @@ block content
             form(action='/userStory' method='POST')
                 div(class="modal-content")
                     div(class="modal-header col-sm-12")
-                        h5(class="modal-title" id="exampleModalLabel") Agregar proyecto
+                        h5(class="modal-title" id="exampleModalLabel") Agregar una historia de usuario
                         button(type="button" class="close" data-dismiss="modal" aria-label="Close")
                     div(class="modal-body col-sm-12")
                         div(class='form-group col-12 col-sm-12')
                             label(for='backlogId') TEMPORAL NECESITO JALAR EL ID DEL PROYECTO
-                            input(type='text' class='form-control' name='projectName' placeholder='Proyecto DRAW')
+                            input(type='text' class='form-control' name='backlogId' placeholder='????')
                         div(class='form-group col-sm-6')
-                            label(for='size') Equipo
-                                select(class='form-control' name='developerTeam')
+                            label(for='size') Tiempo
+                                select(class='form-control' name='size')
                                     option 1
                                     option 2
                                     option 3
@@ -24,8 +24,8 @@ block content
                                     option 13
                                     option 21
                         div(class='form-group col-sm-6')
-                            label(for='priority') Equipo
-                                select(class='form-control' name='developerTeam')
+                            label(for='priority') Prioridad
+                                select(class='form-control' name='priority')
                                     option 1
                                     option 2
                                     option 3
@@ -37,26 +37,26 @@ block content
                                     option 9
                                     option 10
                         div(class='form-group col-12 col-sm-6')
-                            label(for='name') Fecha de solcitud
-                            input(type='text' class='form-control' placeholder='1999-12-12' name='projectRequestDate')
+                            label(for='name') Nombre
+                            input(type='text' class='form-control' placeholder='ejemplo' name='name')
                         div(class='form-group col-12 col-sm-6')
                             label(for='asRole') Fecha de arranque
-                            input(type='text' class='form-control' placeholder='1999-12-12' name='projectStartDate')
+                            input(type='text' class='form-control' placeholder='Administrado' name='asRole')
                         div(class='form-group col-12 col-sm-6')
                             label(for='want') Descripción
-                            input(type='text' class='form-control' placeholder='Fabuloso proyecto' name='projectDescription')
+                            input(type='text' class='form-control' placeholder='Agregar usuarios' name='want')
                         div(class='form-group col-12 col-sm-6')
                             label(for='soThat') Product owner
-                            input(type='text' class='form-control' placeholder='Juanito Alcachofa' name='productOwner')
+                            input(type='text' class='form-control' placeholder='Puedan usar el sistema' name='soThat')
                         div(class='form-group col-12 col-sm-6')
                             label(for='given') Product owner
-                            input(type='text' class='form-control' placeholder='Juanito Alcachofa' name='productOwner')
+                            input(type='text' class='form-control' placeholder='placeholder' name='given')
                         div(class='form-group col-12 col-sm-6')
                             label(for='when') Product owner
-                            input(type='text' class='form-control' placeholder='Juanito Alcachofa' name='productOwner')
+                            input(type='text' class='form-control' placeholder='placeholder' name='when')
                         div(class='form-group col-12 col-sm-6')
                             label(for='then') Product owner
-                            input(type='text' class='form-control' placeholder='Juanito Alcachofa' name='productOwner')
+                            input(type='text' class='form-control' placeholder='placeholder' name='then')
                         div(class="modal-footer")
 
                             button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
