@@ -22,16 +22,16 @@ block content
                                 input(type='text' class='form-control' name='fullName' placeholder='@Juanito Alcachofa' value=`${username.fullName}`) 
                             div(class='form-group col-12 col-sm-6')
                                 label(for='birthdate') Fecha de nacimiento
-                                input(type='text' class='form-control' placeholder='1999-12-12' name='birthDate')
+                                input(type='text' class='form-control' placeholder='1999-12-12' value=`${username.birthDate}` name='birthDate')
                             div(class='form-group col-12 col-sm-6')
                                 label(for='curp') CURP
-                                input(type='text' class='form-control' placeholder='12345678912345678' name='curp')
+                                input(type='text' class='form-control' placeholder='12345678912345678' value=`${username.curp}` name='curp')
                             div(class='form-group col-12 col-sm-6')
                                 label(for='rfc') RFC
-                                input(type='text' class='form-control' placeholder='12345678912345678' name='rfc')
+                                input(type='text' class='form-control' placeholder='12345678912345678' value=`${username.rfc}` name='rfc')
                             div(class='form-group col-12 col-sm-6')
                                 label(for='address') Domicilio
-                                input(type='text' class='form-control' placeholder='Calle Mozarella #5555' name='address')
+                                input(type='text' class='form-control' placeholder='Calle Mozarella #5555' value=`${username.address}` name='address')
                         div(class='col-sm-12 mt-3')
                             p(class='presentation-text text-left') ¿Cómo ayudas a tu equipo?
                                 div(class='row')

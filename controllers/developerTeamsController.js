@@ -47,7 +47,7 @@ function listAll(req, res, next) {
       res.render('developerTeams', {
         developerTeams : developerTeams,
         title: 'Scizza | Proyectos',
-        username: 'Scizzonio Peperoni',
+        username: req.user,
         principalSkill: 'Desarrollador Web'
       });
     }).catch((err)=>{
