@@ -67,6 +67,57 @@ block content
                                         br
                                         br
                         div(class="d-flex align-items-end flex-column")
-                            a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar proyecto
+                        a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar tarjeta
+    div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+        div(class="modal-dialog bg-light col-sm-12" role="document")
+            form(action='/userStory' method='POST')
+                div(class="modal-content")
+                    div(class="modal-header col-sm-12")
+                        h5(class="modal-title" id="exampleModalLabel") Agregar tarjeta
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                    div(class="modal-body col-sm-12")
+                        div(class='col-sm-12 mt-3')
+                            p(class='presentation-text text-left') Narrativa de la historia
+                                div(class='row')
+                                    div(class="form-group col-sm-12")
+                                        label(for="asRol") Cómo
+                                        textarea(class="form-control" name='asRol' rows="3")
+                                    div(class="form-group col-sm-12")
+                                        label(for="want") Quiero
+                                        textarea(class="form-control" name='want' rows="3")
+                                    div(class="form-group col-sm-12")
+                                        label(for="soThat") De tal manera
+                                        textarea(class="form-control" name='soThat' rows="3")
+                                    div(class="form-group row")
+                                        label(for="priority" class="col-2 col-form-label") Prioridad
+                                        div(class="col-sm-12")
+                                            input(class="form-control" name='priority' type="number" value="1" )
+                                    div(class='form-group col-sm-12')
+                                        label(for='size') Tamaño
+                                        select(class='form-control' name='size')
+                                            option 1
+                                            option 2
+                                            option 3
+                                            option 5
+                                            option 8
+                                            option 13
+                                            option 21
+                            hr
+                            p(class='presentation-text text-left') Criterios de aceptación
+                                div(class='row')
+                                    div(class="form-group col-sm-12")
+                                        label(for="given") Dado
+                                        textarea(class="form-control" name="given" rows="3")
+                                    div(class="form-group col-sm-12")
+                                        label(for="when") Cuándo
+                                        textarea(class="form-control" name="when" rows="3")
+                                    div(class="form-group col-sm-12")
+                                        label(for="then") Entonces
+                                        textarea(class="form-control" name="then" rows="3")
+                        div(class="modal-footer")
+                            button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
+                            input(type='hidden' class='btn btn-danger float-right' value='5bff17c04c48083e0bd0ebb1' name='user')
+                            input(type='submit' class='btn btn-danger' value='Agregar')
+
 
 
