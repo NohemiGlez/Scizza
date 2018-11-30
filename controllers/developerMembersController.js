@@ -53,10 +53,7 @@ function create(req, res, next) {
         res.redirect('projects/get');
       })
       .catch((err)=>{
-        return res.status(500).json({
-          errors:[{message: 'Algo salió mal al momento de crear usuario :c'}],
-          data:[]
-        });
+        res.redirect('projects/get');
       });
   })
   .catch((err)=>{
