@@ -1,9 +1,20 @@
+const passport = require('passport');
 const express = require('express');
 const DeveloperMember = require('../models/developerMember');
 //const DeveloperTeam = require('../models/developerTeam');
 //const Role = require('../models/role');
 const {validationResult} = require('express-validator/check');
 const ObjectID = require('mongodb').ObjectID;
+
+passport.serializeUser((developerMember, done) => {
+  done(null, developerMember.id);
+});
+
+passport.deserializeUser((id, done) => {
+  DeveloperMember.findById(id).then((developerMember) => {
+    done(null, developerMember);
+  });
+});
 
 function create(req, res, next) {
 
@@ -38,6 +49,7 @@ function create(req, res, next) {
         //  errors: [],
         //  data: obj
         //});
+        done(null, newDeveloperMember);
         res.redirect('projects/get');
       })
       .catch((err)=>{
