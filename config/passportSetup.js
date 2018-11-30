@@ -21,7 +21,7 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new GoogleStrategy({
     // options for the google strategy
-    callbackURL: '/auth/google/redirect',
+    callbackURL: 'https://scizza.herokuapp.com/auth/google/redirect',
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
 
