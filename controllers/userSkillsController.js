@@ -15,7 +15,7 @@ function create(req, res, next) {
 
   let userSkill = new UserSkill({
     _id: req.body.id ? req.body.id : new ObjectID(),
-    _user: req.body.user,
+    _user: req.user.id,
     _skill: req.body.skill,
     _level: req.body.level
   });
@@ -43,7 +43,7 @@ function listAll(req, res, next) {
   }
 
   //DeveloperMember.paginate({}, options)
-    UserSkill.find({}, (err, userSkills)=>{
+    UserSkill.find({_user : req.user.id}, (err, userSkills)=>{
       DeveloperMember.populate(userSkills, {path: "_user"}, (err, userSkills)=>{
         res.render('userSkills', {
             userSkills : userSkills,
