@@ -129,7 +129,27 @@ function destroy(req, res, next) {
 }
 
 function sprints(req, res, next){
-    res.render('tableros');
+    let project = req.params.id;
+
+    const options = {
+        page: 1,
+        limit: 30,
+        select: '_projectName _projectRequestDate _projectStartDate _projectDescription _projectManager _productOwner _developerTeam'
+    }
+
+    Sprint.find({_project : project }, (err, sprints)=>{
+        res.render('sprints', {
+            sprints : sprints
+        });
+        //res.status(200).send(objs);
+    }).catch((err)=>{
+        res.status(500).json({
+            errors: [{message: 'Algo salió mal :c'}],
+            data: []
+        });
+    });
+
+
 }
 
 module.exports = {

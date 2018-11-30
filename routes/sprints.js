@@ -2,9 +2,9 @@ let express = require('express');
 let router = express.Router();
 const sprintsController = require('../controllers/sprintsController');
 
-router.post('/', sprintsController.create);
+router.get('/:id', sprintsController.sprints);
 
-router.get('/', sprintsController.sprints);
+router.post('/', sprintsController.create);
 
 router.get('/get', sprintsController.listAll);
 
