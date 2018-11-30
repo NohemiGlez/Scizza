@@ -129,3 +129,63 @@ body, .white-background {
   bottom: -4px;
   right: 10px;
 }
+
+.drag-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.drag-ul {
+    display: flex;
+    flex-direction: column;
+    padding: 3px !important;
+    min-height: 70vh;
+    width: 100px;
+    float:left;
+    list-style-type:none;
+    overflow-y:auto;
+    border:2px solid #888;
+    border-radius:0.2em;
+    background:#8adccc;
+    color:#555;
+    margin-right: 5px;
+}
+
+/* drop target state */
+.drag-ul[aria-dropeffect="move"] {
+    border-color:#68b;
+    background:#fff;
+}
+
+/* draggable items */
+.drag-li {
+    display:block;
+    list-style-type:none;
+    margin:0 0 2px 0;
+    padding:0.2em 0.4em;
+    border-radius:0.2em;
+    line-height:1.3;
+}
+
+.drag-li:hover {
+    box-shadow:0 0 0 2px #68b, inset 0 0 0 1px #ddd;
+}
+
+/* items focus state */
+.drag-li:focus
+{
+    outline:none;
+    box-shadow:0 0 0 2px #68b, inset 0 0 0 1px #ddd;
+}
+
+/* items grabbed state */
+.drag-li[aria-grabbed="true"]
+{
+    background:#5cc1a6;
+    color:#fff;
+}
+
+@keyframes nodeInserted {
+    from { opacity: 0.2; }
+    to { opacity: 0.8; }
+}

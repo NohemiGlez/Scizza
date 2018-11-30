@@ -66,11 +66,11 @@ function listAll(req, res, next) {
 
     //Project.paginate({}, options)
     //.then((objs)=>{
-    Project.find({}, (err, projects)=>{
+    Project.find({ _developerTeam : req.user.team }, (err, projects)=>{
       res.render('projects', {
           projects : projects,
           title: 'Scizza | Proyectos',
-          username: 'Scizzonio Peperoni',
+          username: req.user,
           principalSkill: 'Desarrollador Web'
         });
       //res.status(200).send(objs);
