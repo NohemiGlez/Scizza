@@ -10,7 +10,7 @@ const schema = Schema({
     _id: ObjectId,
     _name: String,
     _type: String,
-    _project: { type: ObjectId, ref: 'Project'}
+    _project: { type: String, ref: 'Project'}
 });
 
 class Sprint{

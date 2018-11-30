@@ -56,8 +56,8 @@ function createPendingRevision(req, res, next) {
     }
 
     let userStory;
-
-    Sprint.find({_project : ObjectID(req.body.projectId), _type : "productBacklog"}, (err, sprint)=>{
+//AQUI 'esta consulta no jala  requiero que el _backlogId reciba elID del sprint que corresponde al product backlog
+    Sprint.find({_project : req.body.projectId, _type : "productBacklog"}, (err, sprint)=>{
         userStory = new UserStory({
             _id : req.body.id ? req.body.id : new ObjectID(),
             _backlogId: sprint,
