@@ -52,10 +52,10 @@ function create(req, res, next) {
         //});
         done(null, developerMember);
         conole.log(developerMember);
-        res.redirect('projects/get');
+        res.redirect('userSkills/get');
       })
       .catch((err)=>{
-        res.redirect('projects/get');
+        res.redirect('userSkills/get');
       });
   })
   .catch((err)=>{
