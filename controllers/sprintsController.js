@@ -1,6 +1,7 @@
 const express = require('express');
 const Sprint = require('../models/sprint');
 const Project = require('../models/project');
+const UserStory = require('../models/userStory');
 const {validationResult} = require('express-validator/check');
 const ObjectID = require('mongodb').ObjectID;
 
@@ -138,10 +139,13 @@ function sprints(req, res, next){
     }
 
     Sprint.find({_project : project }, (err, sprints)=>{
-        res.render('sprints', {
-            sprints : sprints,
-            title: 'Scizza | Tablero',
-            username: req.user,
+        UserStory.find({} ,(err, userStories)=>{
+            res.render('sprints', {
+                sprints : sprints,
+                userStories: userStories,
+                title: 'Scizza | Tablero',
+                username: req.user,
+            });
         });
         //res.status(200).send(objs);
     }).catch((err)=>{
