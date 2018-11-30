@@ -18,7 +18,6 @@ block content
                                                     p(class='card-text') #{sprint.type}
                                                     p(class='card-text') #{sprint.id}
                                                     each userStory in userStories
-                                                        if userStory.backlogId == sprint.id
                                                             div(class='card-flip')
                                                                 div(class='flip')
                                                                     div(class='front')
@@ -123,6 +122,3 @@ block content
                             button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
                             input(type='hidden' class='btn btn-danger float-right' value='5bff17c04c48083e0bd0ebb1' name='user')
                             input(type='submit' class='btn btn-danger' value='Agregar')
-
-
-
