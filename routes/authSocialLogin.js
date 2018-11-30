@@ -29,7 +29,11 @@ router.get('/linkedin', passport.authenticate('linkedin', {
 // Callback route for facebook
 router.get('/linkedin/redirect', passport.authenticate('linkedin'), (req, res) => {
   // res.send(req.user);
-  res.redirect('/profile');
+  if(passportSetup.usuarioExistente) {
+    res.redirect('/projects/get');
+  } else {
+    res.redirect('/profile');
+  }
 });
 
 // Auth with github
@@ -40,7 +44,11 @@ router.get('/github', passport.authenticate('github', {
 // Callback route for facebook
 router.get('/github/redirect', passport.authenticate('github'), (req, res) => {
   // res.send(req.user);
-  res.redirect('/profile');
+  if(passportSetup.usuarioExistente) {
+    res.redirect('/projects/get');
+  } else {
+    res.redirect('/profile');
+  }
 });
 
 module.exports = router;

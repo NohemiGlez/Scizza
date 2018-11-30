@@ -71,6 +71,7 @@ passport.use (
       if(currentDeveloperMember) {
         // ya existe el usuario
         console.log('El usuario ya existe: ', currentDeveloperMember);
+        module.exports.usuarioExistente = true;
         done(null, currentDeveloperMember);
       } else {
         // si no existe el usuario se crea en la base de datos
@@ -86,6 +87,7 @@ passport.use (
           _permission: " "
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
+          module.exports.usuarioExistente = false;
           done(null, newDeveloperMember);
         });
       }
@@ -105,6 +107,7 @@ passport.use(
     }).then((currentDeveloperMember) => {
       if(currentDeveloperMember) {
         console.log('El usuario ya existe: ', currentDeveloperMember);
+        module.exports.usuarioExistente = true;
         done(null, currentDeveloperMember);
       } else {
         new DeveloperMember({
@@ -119,6 +122,7 @@ passport.use(
           _permission: " "
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
+          module.exports.usuarioExistente = false;
           done(null, newDeveloperMember);
         });
       }
