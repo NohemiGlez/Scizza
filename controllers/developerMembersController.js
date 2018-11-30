@@ -2,6 +2,7 @@ const passport = require('passport');
 const express = require('express');
 const DeveloperMember = require('../models/developerMember');
 const DeveloperTeam = require('../models/developerTeam');
+const Role = require('../models/role');
 //const DeveloperTeam = require('../models/developerTeam');
 //const Role = require('../models/role');
 const {validationResult} = require('express-validator/check');
@@ -86,11 +87,14 @@ function listAll(req, res, next) {
       });
 */
 DeveloperTeam.find({}, (err, developerTeams)=>{
-  res.render('profile', {
-      developerTeams : developerTeams,
-      title: 'Scizza | Proyectos',
-      username: req.user,
-      principalSkill: 'Desarrollador Web'
+  Role.find({}, (err, roles)=>{
+    res.render('profile', {
+        developerTeams : developerTeams,
+        roles : roles,
+        title: 'Scizza | Proyectos',
+        username: req.user,
+        principalSkill: 'Desarrollador Web'
+      });
     });
   //res.status(200).send(objs);
 }).catch((err)=>{

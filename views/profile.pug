@@ -46,9 +46,8 @@ block content
                                     div(class='form-group col-sm-6')
                                         label(for='role') Rol
                                         select(class='form-control' name='role')
-                                            option Project manager
-                                            option Backend
-                                            option Frontend
+                                          each role in roles
+                                            option #{role.role}
                         br
                         input(type='submit' class='btn btn-danger float-right' value='Guardar perfil')
                         input(type='hidden' class='btn btn-danger float-right' value=`${username.github_provider_id}` name='github_provider_id')
