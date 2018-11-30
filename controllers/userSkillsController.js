@@ -48,7 +48,7 @@ function listAll(req, res, next) {
         res.render('userSkills', {
             userSkills : userSkills,
             title: 'Scizza | Proyectos',
-            username: 'Scizzonio Peperoni',
+            username: req.user,
             principalSkill: 'Desarrollador Web'
           });
       });
