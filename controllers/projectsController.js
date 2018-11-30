@@ -66,7 +66,7 @@ function listAll(req, res, next) {
 
     //Project.paginate({}, options)
     //.then((objs)=>{
-    Project.find({}, (err, projects)=>{
+    Project.find({ _developerTeam : req.user.team }, (err, projects)=>{
       res.render('projects', {
           projects : projects,
           title: 'Scizza | Proyectos',
