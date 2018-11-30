@@ -59,7 +59,7 @@ passport.use(
 
 passport.use (
   new LinkedInStrategy({
-    callbackURL: 'http://localhost:3000/auth/linkedin/redirect',
+    callbackURL: 'https://scizza.herokuapp.com/auth/linkedin/redirect',
     clientID: keys.linkedin.clientID,
     clientSecret: keys.linkedin.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
