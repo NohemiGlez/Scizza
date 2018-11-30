@@ -1,5 +1,6 @@
 const express = require('express');
 const UserStory = require('../models/userStory');
+const Sprint = require('../models/sprint');
 const {validationResult} = require('express-validator/check');
 const ObjectID = require('mongodb').ObjectID;
 
@@ -44,6 +45,60 @@ function create(req, res, next) {
         });
 
 }
+
+function createPendingRevision(req, res, next) {
+
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.status(422).json({
+            errors:errors.array()
+        });
+    }
+
+    let userStory;
+
+    Sprint.find({_project : ObjectID(req.body.projectId), _type : "productBacklog"}, (err, sprint)=>{
+        userStory = new UserStory({
+            _id : req.body.id ? req.body.id : new ObjectID(),
+            _backlogId: sprint,
+            _name: req.body.name,
+            _asRole: req.body.asRole,
+            _want: req.body.want,
+            _soThat: req.body.soThat,
+            _priority: req.body.priority,
+            _size: req.body.size,
+            _timeUnit: req.body.timeUnit,
+            _given: req.body.given,
+            _when: req.body.when,
+            _then: req.body.then,
+            _remainingTime: req.body.remainingTime,
+            _validated: req.body.validated ? req.body.validated : false
+        });
+
+        userStory.save()
+            .then((obj)=>{
+                res.status(200).json({
+                    errors: [],
+                    data: obj
+                });
+            })
+            .catch((err)=>{
+                return res.status(500).json({
+                    errors:[{message: 'Algo salió mal :c'}],
+                    data:[]
+                });
+            });
+    }).catch((err)=> {
+        res.status(500).json({
+            errors: [{message: 'Algo salió mal :c'}],
+            data: []
+        });
+    });
+
+
+
+}
+
 
 function listAll(req, res, next) {
 
@@ -140,6 +195,7 @@ function destroy(req, res, next) {
 
 module.exports = {
     create,
+    createPendingRevision,
     listOne,
     listAll,
     update,

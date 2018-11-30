@@ -16,6 +16,8 @@ router.get('/', authCheck, (req, res) => {
     res.render('userStories', { title: 'Scizza | Historias de usuario', username: req.user, principalSkill: 'Desarrollador Web' });
 })
 
+router.post('/add', userStoryController.createPendingRevision);
+
 router.get('/get', userStoryController.listAll);
 
 router.get('/show/:id?', userStoryController.listOne);

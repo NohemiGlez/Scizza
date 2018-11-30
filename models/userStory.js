@@ -19,11 +19,12 @@ const schema = Schema({
     _then: String,
     _remainingTime: Number,
     _validated: Boolean,
+    _projectId: String
 });
 
 class UserStory{
 
-    constructor(id, backlogId, name, asRole, want, soThat, priority, size, timeUnit, given, when, then, remainingTime, validated) {
+    constructor(id, backlogId, name, asRole, want, soThat, priority, size, timeUnit, given, when, then, remainingTime, validated, projectId) {
         this._id = id;
         this._backlogId = backlogId;
         this._name = name;
@@ -38,6 +39,7 @@ class UserStory{
         this._then = then;
         this._remainingTime = remainingTime;
         this._validated = validated;
+        this._projectId = projectId;
     }
 
     get id() {
@@ -150,6 +152,14 @@ class UserStory{
 
     set validated(value) {
         this._validated = value;
+    }
+
+    get projectId() {
+        return this._projectId;
+    }
+
+    set projectId(value) {
+        this._projectId = value;
     }
 }
 

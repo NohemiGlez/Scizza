@@ -16,14 +16,16 @@ block content
                                                 div(class="card-block")
                                                     h4(class="card-title mt-3") #{sprint.name}
                                                     p(class='card-text') #{sprint.type}
+                                                    p(class='card-text') #{sprint.id}
                                                     each userStory in userStories
-                                                        if userStory.backlogID == sprint.id
+                                                        if userStory.backlogId == sprint.id
                                                             div(class='card-flip')
                                                                 div(class='flip')
                                                                     div(class='front')
                                                                         div(class='card shadow-sm p-3 mb-5 bg-white rounded')
                                                                             div(class="card-block")
                                                                                 h4(class="card-title mt-3") Narrativa de la historia
+                                                                                p(class='card-text') #{userStory.backlogId}
                                                                                 p(class='card-text') Como: #{userStory.asRole}
                                                                                 p(class='card-text') Quiero: #{userStory.want}
                                                                                 p(class='card-text') De tal manera: #{userStory.soThat}
@@ -70,7 +72,7 @@ block content
                         a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar tarjeta
     div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
         div(class="modal-dialog bg-light col-sm-12" role="document")
-            form(action='/userStory' method='POST')
+            form(action='/userStories/add' method='POST')
                 div(class="modal-content")
                     div(class="modal-header col-sm-12")
                         h5(class="modal-title" id="exampleModalLabel") Agregar tarjeta
@@ -80,8 +82,11 @@ block content
                             p(class='presentation-text text-left') Narrativa de la historia
                                 div(class='row')
                                     div(class="form-group col-sm-12")
-                                        label(for="asRol") Cómo
-                                        textarea(class="form-control" name='asRol' rows="3")
+                                        label(for="projectId")
+                                        textarea(class="form-control" name='projectId' rows="3" placeholder=`${projectId}`)
+                                    div(class="form-group col-sm-12")
+                                        label(for="asRole") Cómo
+                                        textarea(class="form-control" name='asRole' rows="3")
                                     div(class="form-group col-sm-12")
                                         label(for="want") Quiero
                                         textarea(class="form-control" name='want' rows="3")

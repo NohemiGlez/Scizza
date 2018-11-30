@@ -145,6 +145,7 @@ function sprints(req, res, next){
                 userStories: userStories,
                 title: 'Scizza | Tablero',
                 username: req.user,
+                projectId: project,
             });
         });
         //res.status(200).send(objs);
