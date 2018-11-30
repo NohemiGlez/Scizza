@@ -78,7 +78,7 @@ passport.use (
         new DeveloperMember({
           _id: new ObjectID(),
           _linkedin_provider_id: profile.id,
-          _fullName: " ",
+          _fullName: profile.displayName,
           _curp: " ",
           _rfc: " ",
           _address: " ",
@@ -88,6 +88,7 @@ passport.use (
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           module.exports.usuarioExistente = false;
+          console.log(profile);
           done(null, newDeveloperMember);
         });
       }
