@@ -7,7 +7,7 @@ const passportSetup = require('../config/passportSetup');
 
 // Auth with google
 router.get('/google', passport.authenticate('google', {
-  scope: ['profile']
+  scope: ['profile https://www.googleapis.com/auth/user.birthday.read']
 }));
 
 // Callback route for google

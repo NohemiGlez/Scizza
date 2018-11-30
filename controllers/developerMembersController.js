@@ -33,7 +33,6 @@ function create(req, res, next) {
       _github_provider_id: req.body.github_provider_id,
       _google_provider_id: req.body.google_provider_id,
       _fullName: req.body.fullName,
-      _birthDate: req.body.birthDate,
       _curp: req.body.curp,
       _rfc: req.body.rfc,
       _address: req.body.address,
