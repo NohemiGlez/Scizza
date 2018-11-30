@@ -28,7 +28,7 @@ function create(req, res, next) {
   DeveloperMember.remove({_id: req.user.id})
   .then(() => {
     let developerMember = new DeveloperMember({
-      _id: req.body.id ? req.body.id : new ObjectID(),
+      _id: req.user.id ? req.user.id : new ObjectID(),
       _linkedin_provider_id: req.body.linkedin_provider_id,
       _github_provider_id: req.body.github_provider_id,
       _google_provider_id: req.body.google_provider_id,
@@ -55,7 +55,7 @@ function create(req, res, next) {
       })
       .catch((err)=>{
         return res.status(500).json({
-          errors:[{message: 'Algo salió mal :c'}],
+          errors:[{message: 'Algo salió mal al momento de crear usuario :c'}],
           data:[]
         });
       });

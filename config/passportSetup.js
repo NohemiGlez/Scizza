@@ -40,7 +40,14 @@ passport.use(
         new DeveloperMember({
           _id: new ObjectID(),
           _google_provider_id: profile.id,
-          _fullName: profile.displayName
+          _fullName: profile.displayName,
+          _birthDate: " ",
+          _curp: " ",
+          _rfc: " ",
+          _address: " ",
+          _team: " ",
+          _role: " ",
+          _permission: " "
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           module.exports.usuarioExistente = false;
@@ -71,7 +78,14 @@ passport.use (
         new DeveloperMember({
           _id: new ObjectID(),
           _linkedin_provider_id: profile.id,
-          _fullName: profile.firstname
+          _fullName: " ",
+          _birthDate: " ",
+          _curp: " ",
+          _rfc: " ",
+          _address: " ",
+          _team: " ",
+          _role: " ",
+          _permission: " "
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
@@ -98,7 +112,14 @@ passport.use(
         new DeveloperMember({
           _id: new ObjectID(),
           _github_provider_id: profile.id,
-          _fullName: profile.name
+          _fullName: " ",
+          _birthDate: " ",
+          _curp: " ",
+          _rfc: " ",
+          _address: " ",
+          _team: " ",
+          _role: " ",
+          _permission: " "
         }).save().then((newDeveloperMember) => {
           console.log('Nuevo usuario: ' + newDeveloperMember);
           done(null, newDeveloperMember);
