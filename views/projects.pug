@@ -75,7 +75,9 @@ block content
                             input(type='text' class='form-control' placeholder='Fabuloso proyecto' name='projectDescription')
                         div(class='form-group col-12 col-sm-6')
                             label(for='productOwner') Product owner
-                            input(type='text' class='form-control' placeholder='Juanito Alcachofa' name='productOwner')
+                            select(class='form-control' name='productOwner')
+                              each developerMember in developerMembers
+                                option #{developerMember.fullName}
                         div(class='form-group col-sm-6')
                             label(for='developerTeam') Equipo
                                 select(class='form-control' name='developerTeam')
