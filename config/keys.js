@@ -4,8 +4,8 @@ module.exports = {
     clientSecret: 'eKHN8ncb2Gg7cOePWrmYoH7D'
   },
   linkedin: {
-    clientID: '86jex5gvugkugq',
-    clientSecret: 'VzncjqQWBN7RtcIS'
+    clientID: '785048vakbmnp6',
+    clientSecret: '5ZnsqQiECnNdYVd9'
   },
   github: {
     clientID: '7d5ce265b2445d46ec95',
