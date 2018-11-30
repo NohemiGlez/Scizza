@@ -98,7 +98,7 @@ passport.use (
 
 passport.use(
   new GitHubStrategy({
-    callbackURL: '/auth/github/redirect',
+    callbackURL: 'https://scizza.herokuapp.com/auth/github/redirect',
     clientID: keys.github.clientID,
     clientSecret: keys.github.clientSecret
   }, (accessToken, refreshToken, profile, done) => {
