@@ -70,7 +70,7 @@ function listAll(req, res, next) {
       res.render('projects', {
           projects : projects,
           title: 'Scizza | Proyectos',
-          username: 'Scizzonio Peperoni',
+          username: req.user,
           principalSkill: 'Desarrollador Web'
         });
       //res.status(200).send(objs);

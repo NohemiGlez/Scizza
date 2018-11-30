@@ -44,12 +44,13 @@ function create(req, res, next) {
     // EL formato de fecha para insertar es YYYY-MM-DD
 
     developerMember.save()
-      .then((obj)=>{
+      .then((developerMember)=>{
         //res.status(200).json({
         //  errors: [],
         //  data: obj
         //});
-        done(null, newDeveloperMember);
+        done(null, developerMember);
+        conole.log(developerMember);
         res.redirect('projects/get');
       })
       .catch((err)=>{
