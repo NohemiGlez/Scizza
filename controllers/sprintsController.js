@@ -127,15 +127,16 @@ function destroy(req, res, next) {
         });
 
 }
-/*
+
 function sprints(req, res, next){
-    //Sprint.find({_project: req.user.})
+    res.render('tableros');
 }
-*/
+
 module.exports = {
     create,
     listOne,
     listAll,
     update,
-    destroy
+    destroy,
+    sprints
 }
