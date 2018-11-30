@@ -3,6 +3,8 @@ var router = express.Router();
 const authSocialController = require('../controllers/authSocialController');
 const passport = require('passport');
 
+const passportSetup = require('../config/passportSetup');
+
 // Auth with google
 router.get('/google', passport.authenticate('google', {
   scope: ['profile']
@@ -11,7 +13,12 @@ router.get('/google', passport.authenticate('google', {
 // Callback route for google
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
   // res.send(req.user);
-  res.redirect('/profile');
+  if(passportSetup.usuarioExistente) {
+    res.redirect('/projects/get');
+  } else {
+    res.redirect('/profile');
+  }
+
 });
 
 // Auth with linkedin

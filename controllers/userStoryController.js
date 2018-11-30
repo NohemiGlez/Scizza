@@ -25,7 +25,8 @@ function create(req, res, next) {
         _given: req.body.given,
         _when: req.body.when,
         _then: req.body.then,
-        _remainingTime: req.body.remainingTime
+        _remainingTime: req.body.remainingTime,
+        _validated: req.body.validated ? req.body.validated : false
     });
 
     userStory.save()
@@ -102,6 +103,7 @@ function update(req, res, next) {
             obj.when = req.body.when ? req.body.when : obj.when;
             obj.then = req.body.then ? req.body.then : obj.then;
             obj.remainingTime = req.body.remainingTime ? req.body.remainingTime : obj.remainingTime;
+            obj.validated = req.body.validated ? req.body.validated : obj.validated;
             obj.save()
                 .then((obj)=>{
                     res.status(200).json({

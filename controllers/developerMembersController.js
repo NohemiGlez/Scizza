@@ -14,36 +14,45 @@ function create(req, res, next) {
     });
   }
 
-  let developerMember = new DeveloperMember({
-    _id: req.body.id ? req.body.id : new ObjectID(),
-    _linkedin_provider_id: req.body.linkedin_provider_id,
-    _github_provider_id: req.body.github_provider_id,
-    _google_provider_id: req.body.google_provider_id,
-    _fullName: req.body.fullName,
-    _birthDate: req.body.birthDate,
-    _curp: req.body.curp,
-    _rfc: req.body.rfc,
-    _address: req.body.address,
-    _team: req.body.team,
-    _role: req.body.role,
-    _permission: req.body.permission
-  });
-  // EL formato de fecha para insertar es YYYY-MM-DD
-
-  developerMember.save()
-    .then((obj)=>{
-      //res.status(200).json({
-      //  errors: [],
-      //  data: obj
-      //});
-      res.redirect('projects/get');
-    })
-    .catch((err)=>{
-      return res.status(500).json({
-        errors:[{message: 'Algo salió mal :c'}],
-        data:[]
-      });
+  DeveloperMember.remove({_id: req.user.id})
+  .then(() => {
+    let developerMember = new DeveloperMember({
+      _id: req.body.id ? req.body.id : new ObjectID(),
+      _linkedin_provider_id: req.body.linkedin_provider_id,
+      _github_provider_id: req.body.github_provider_id,
+      _google_provider_id: req.body.google_provider_id,
+      _fullName: req.body.fullName,
+      _birthDate: req.body.birthDate,
+      _curp: req.body.curp,
+      _rfc: req.body.rfc,
+      _address: req.body.address,
+      _team: req.body.team,
+      _role: req.body.role,
+      _permission: req.body.permission
     });
+    // EL formato de fecha para insertar es YYYY-MM-DD
+
+    developerMember.save()
+      .then((obj)=>{
+        //res.status(200).json({
+        //  errors: [],
+        //  data: obj
+        //});
+        res.redirect('projects/get');
+      })
+      .catch((err)=>{
+        return res.status(500).json({
+          errors:[{message: 'Algo salió mal :c'}],
+          data:[]
+        });
+      });
+  })
+  .catch((err)=>{
+    res.status(500).json({
+      errors: [{ message: 'Algo salió mal :c' }],
+      data: []
+    });
+  });
 
 }
 
