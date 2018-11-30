@@ -1,0 +1,54 @@
+extends dashboard_base
+
+block content
+    div(class='col-sm-12')
+        div(class='col-sm-9 offset-sm-3') 
+            section
+                div(class='container')
+                    div(class='row mt-5')
+                      each role in roles
+                            div(class='col-sm-6 col-lg-4 mt-5')
+                                div(class='card-flip')
+                                    div(class='front')
+                                        div(class='card shadow-sm p-3 mb-5 bg-white rounded')
+                                            img(class="card-img-top" src="../images/team_pizza.jpg" alt="100%x180" style="height: 180px; width: 100%; display: block;" data-holder-rendered="true")
+                                            div(class="card-block")
+                                                h4(class="card-title mt-3") #{role.role}
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br    
+                    div(class="d-flex align-items-end flex-column")
+                        a(class='btn-corner btn btn-danger text-light' id='show-modal' data-toggle="modal" data-target="add-project") Agregar roles
+    div(class="modal fade" id="add-project" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+        div(class="modal-dialog bg-light col-sm-12" role="document")
+            form(action='/roles' method='POST')
+                div(class="modal-content")
+                    div(class="modal-header col-sm-12")
+                        h5(class="modal-title" id="exampleModalLabel") Agregar roles
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                    div(class="modal-body col-sm-12")
+                        div(class='col-sm-12 mt-3')
+                            p(class='presentation-text text-left') ¿Cómo compartirás pizza con tus compañeros?
+                                div(class='row')
+                                    div(class='form-group col-sm-12')
+                                        label(for='role') Nombre del rol
+                                        input(type='text' class='form-control' name='role' placeholder='Product owner') 
+                        div(class="modal-footer")
+                            button(type="button" class="btn btn-secondary" data-dismiss="modal") Cerrar
+                            input(type='hidden' class='btn btn-danger float-right' value='5bff17c04c48083e0bd0ebb1' name='user')
+                            input(type='submit' class='btn btn-danger' value='Agregar')
+    
+    
