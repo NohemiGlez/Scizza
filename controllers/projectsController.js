@@ -69,7 +69,7 @@ function listAll(req, res, next) {
     //Project.paginate({}, options)
     //.then((objs)=>{
     Project.find({ _developerTeam : req.user.team }, (err, projects)=>{
-      DeveloperTeam.find({}, (err, developerTeams)=>{
+      DeveloperTeam.find({ _teamName : req.user.team }, (err, developerTeams)=>{
         DeveloperMember.find({}, (err, developerMembers)=>{
         res.render('projects', {
             projects : projects,
