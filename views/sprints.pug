@@ -8,7 +8,7 @@ block content
                     div(class='row mt-10')
                         each sprint in sprints
                             div(class='col-sm-6 col-lg-4 mt-5')
-                                div(class='card-flip')
+                                div()
                                     div(class='flip')
                                         div(class='front')
                                             div(class='card shadow-sm p-3 mb-5 bg-white rounded')
@@ -17,36 +17,28 @@ block content
                                                     h4(class="card-title mt-3") #{sprint.name}
                                                     p(class='card-text') #{sprint.type}
                                                     each userStory in userStories
-                                                        div(class='card-flip')
-                                                            div(class='flip')
-                                                                div(class='front')
-                                                                    div(class='card shadow-sm p-3 mb-5 bg-white rounded')
-                                                                        img(class="card-img-top" src="../images/team_pizza.jpg" alt="100%x180" style="height: 180px; width: 100%; " data-holder-rendered="true")
-                                                                        div(class="card-block")
-                                                                            h4(class="card-title mt-3") #{sprint.name}
-                                                                            p(class='card-text') #{sprint.type}
-                                                                            each userStory in userStories
-                                                                                div(class='card-flip')
-                                                                                    div(class='flip')
-                                                                                        div(class='front')
-                                                                                            div(class='card shadow-sm p-3 mb-5 bg-white rounded')
-                                                                                                div(class="card-block")
-                                                                                                    h4(class="card-title mt-3") Narrativa de la historia
-                                                                                                    p(class='card-text') Como: #{userStory.asRole}
-                                                                                                    p(class='card-text') Quiero: #{userStory.want}
-                                                                                                    p(class='card-text') De tal manera: #{userStory.soThat}
-                                                                                                    p
-                                                                                                        small Prioridad: #{userStory.priority}
-                                                                                                    p
-                                                                                                        small Tamaño: #{userStory.size}
-                                                                                        div(class="back")
-                                                                                            div(class="card shadow-sm p-3 mb-5 bg-white rounded")
-                                                                                                div(class="card-block")
-                                                                                                    h4(class="card-title mt-3") Criterios de aceptación
-                                                                                                    p(class="card-text") Dado: #{userStory.given}
-                                                                                                    p(class="card-text") Cuando: #{userStory.when}
-                                                                                                    p(class='card-text') Entonces: #{userStory.then}
-                                                                                        br
+                                                        if userStory.backlogID == sprint.id
+                                                            div(class='card-flip')
+                                                                div(class='flip')
+                                                                    div(class='front')
+                                                                        div(class='card shadow-sm p-3 mb-5 bg-white rounded')
+                                                                            div(class="card-block")
+                                                                                h4(class="card-title mt-3") Narrativa de la historia
+                                                                                p(class='card-text') Como: #{userStory.asRole}
+                                                                                p(class='card-text') Quiero: #{userStory.want}
+                                                                                p(class='card-text') De tal manera: #{userStory.soThat}
+                                                                                p
+                                                                                    small Prioridad: #{userStory.priority}
+                                                                                p
+                                                                                    small Tamaño: #{userStory.size}
+                                                                    div(class="back")
+                                                                        div(class="card shadow-sm p-3 mb-5 bg-white rounded")
+                                                                            div(class="card-block")
+                                                                                h4(class="card-title mt-3") Criterios de aceptación
+                                                                                p(class="card-text") Dado: #{userStory.given}
+                                                                                p(class="card-text") Cuando: #{userStory.when}
+                                                                                p(class='card-text') Entonces: #{userStory.then}
+                                                                    br
                                         div(class="back")
                                             div(class="card shadow-sm p-3 mb-5 bg-white rounded")
                                                 div(class="card-block")
